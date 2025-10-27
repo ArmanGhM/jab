@@ -173,7 +173,9 @@
             </div>
           </div>
         </div>
-        <div class="order-1 backdrop-blur-sm lg:order-2 fade-in-up delay-4">
+        <div
+          class="order-1 backdrop-blur-lg text-black dark:text-white lg:order-2 fade-in-up delay-4"
+        >
           <div class="glass-card rounded-3xl p-8 lg:p-12 max-w-lg mx-auto">
             <!-- لوگو و عنوان -->
             <div class="text-center mb-10">
@@ -194,23 +196,27 @@
                   ></path>
                 </svg>
               </div>
-              <h2 class="text-3xl font-black text-white mb-2">
+              <h2 class="text-3xl font-black text-blue-600 te mb-2">
                 ورود به پلتفرم
               </h2>
-              <p class="text-blue-200">اطلاعات خود را وارد کنید</p>
+              <p class="dark:text-blue-200 text-black">
+                اطلاعات خود را وارد کنید
+              </p>
             </div>
 
             <!-- فرم -->
             <form class="space-y-6" onsubmit="handleLogin(event)">
               <!-- نام کاربری -->
               <div>
-                <label class="block text-white font-semibold mb-3 text-sm">
+                <label
+                  class="block text-black dark:text-white font-semibold mb-3 text-sm"
+                >
                   نام کاربری یا ایمیل
                 </label>
                 <div class="relative">
                   <input
                     type="text"
-                    class="premium-input w-full px-5 py-4 rounded-xl outline-none text-white"
+                    class="premium-input w-full px-5 py-4 rounded-xl shadow-2xl outline-none text-black dark:placeholder:text-gray-200 placeholder:text-gray-500 dark:text-white"
                     placeholder="username@example.com"
                     required
                   />
@@ -236,13 +242,13 @@
 
               <!-- رمز عبور -->
               <div>
-                <label class="block text-white font-semibold mb-3 text-sm">
+                <label class="block text-black dark:text-white font-semibold mb-3 text-sm">
                   رمز عبور
                 </label>
                 <div class="relative">
                   <input
                     type="password"
-                    class="premium-input w-full px-5 py-4 rounded-xl outline-none text-white"
+                    class="premium-input w-full px-5 py-4 rounded-xl outline-none shadow-2xl text-black dark:placeholder:text-gray-200 placeholder:text-gray-500 dark:text-white"
                     placeholder="••••••••••"
                     required
                   />
@@ -269,7 +275,7 @@
               <!-- به خاطر سپاری و فراموشی رمز -->
               <div class="flex items-center justify-between text-sm">
                 <label
-                  class="flex items-center cursor-pointer text-white hover:text-blue-300 transition"
+                  class="flex items-center cursor-pointer text-black dark:text-white hover:text-blue-300 transition"
                 >
                   <input type="checkbox" class="custom-checkbox ml-2" />
                   <span>مرا به خاطر بسپار</span>
@@ -325,7 +331,7 @@
                 </a>
                 <a
                   href="#demo"
-                  class="outline-button-yellow py-3 rounded-xl text-center font-bold flex items-center justify-center gap-2 text-sm"
+                  class="outline-button-yellow dark:text-amber-200 py-3 rounded-xl text-center font-bold flex items-center justify-center gap-2 text-sm"
                 >
                   <svg
                     class="w-4 h-4"
@@ -354,7 +360,7 @@
             <!-- خط جداکننده -->
             <div class="relative my-8">
               <div class="text-center mt-6 space-y-2">
-                <p class="text-white/50 text-sm">نیاز به کمک دارید؟</p>
+                <p class="text-black dark:text-white/50 text-sm">نیاز به کمک دارید؟</p>
                 <div class="flex items-center justify-center gap-6 text-sm">
                   <a
                     href="#"
@@ -377,7 +383,7 @@
                   </a>
                   <a
                     href="#"
-                    class="text-yellow-300 hover:text-yellow-200 transition flex items-center gap-1"
+                    class="text-black dark:text-yellow-300 hover:text-yellow-200 transition flex items-center gap-1"
                   >
                     <svg
                       class="w-4 h-4"

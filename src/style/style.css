@@ -981,13 +981,13 @@ model-viewer {
 
         .outline-button-yellow {
             border: 2px solid #ffc107;
-            color: #ffc107;
+            color: #503c00;
             background: rgba(255, 193, 7, 0.05);
             transition: all 0.3s;
         }
 
         .outline-button-yellow:hover {
-            background: #ffc107;
+            background: #b98b00;
             color: #000;
             box-shadow: 0 10px 30px rgba(255, 193, 7, 0.4);
             transform: translateY(-2px);
