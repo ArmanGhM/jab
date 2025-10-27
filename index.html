@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html >
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -53,7 +53,7 @@
       id="nav-mobile-bg"
       class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-opacity duration-300 opacity-0"
     ></div>
-
+    <div class="h-[85px] hidden max-sm:block w-full"></div>
     <nav
       data-aos="fade-down"
       class="w-full bg-[#005ebc] backdrop-blur-sm text-white fixed top-0 left-0 z-50 transition-all duration-300"
@@ -107,7 +107,7 @@
       </div>
 
       <div
-        class="w-full h-20 max-w-[1440px] max-md:flex-row-reverse  flex justify-between items-center mx-auto px-4"
+        class="w-full h-20 max-w-[1440px] max-md:flex-row-reverse flex justify-between items-center mx-auto px-4"
       >
         <!-- دکمه همبرگر با انیمیشن -->
         <button
@@ -191,204 +191,219 @@
         <div class="scrolled"></div>
       </div>
     </nav>
-   
+
     <header>
       <div
         id="vanta-bg"
-        class="h-screen flex items-center justify-center relative"
+        class="h-screen max-sm:h-min-screen flex items-center justify-center relative"
       >
+        <div
+          class="particle"
+          style="left: 10%; top: 20%; animation-delay: 0s"
+        ></div>
+        <div
+          class="particle"
+          style="left: 80%; top: 40%; animation-delay: 1s"
+        ></div>
+        <div
+          class="particle"
+          style="left: 30%; top: 60%; animation-delay: 2s"
+        ></div>
+        <div
+          class="particle"
+          style="left: 70%; top: 80%; animation-delay: 3s"
+        ></div>
+        <div
+          class="particle"
+          style="left: 50%; top: 30%; animation-delay: 1.5s"
+        ></div>
+        <div
+          class="particle"
+          style="left: 20%; top: 70%; animation-delay: 2.5s"
+        ></div>
         <!-- Animated Background Particles -->
-        <div class="absolute inset-0 overflow-hidden">
-          <div
-            class="particle"
-            style="left: 10%; top: 20%; animation-delay: 0s"
-          ></div>
-          <div
-            class="particle"
-            style="left: 80%; top: 40%; animation-delay: 1s"
-          ></div>
-          <div
-            class="particle"
-            style="left: 30%; top: 60%; animation-delay: 2s"
-          ></div>
-          <div
-            class="particle"
-            style="left: 70%; top: 80%; animation-delay: 3s"
-          ></div>
-          <div
-            class="particle"
-            style="left: 50%; top: 30%; animation-delay: 1.5s"
-          ></div>
-          <div
-            class="particle"
-            style="left: 20%; top: 70%; animation-delay: 2.5s"
-          ></div>
-        </div>
-
-        <!-- Content -->
-        <div class="relative z-10 container mx-auto px-4 py-20">
-          <div class="max-w-5xl mx-auto text-center">
-            <!-- Badge -->
-            <div
-              data-aos="zoom-in-down"
-              class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect mb-8 fade-in-up stagger-1"
-            >
-              <span
-                class="w-2 h-2 bg-green-400 rounded-full animate-pulse"
-              ></span>
-              <span class="text-sm max-sm:text-xs"
-                >پلتفرم دوقلوی دیجیتال ساتراپ ویرا سازان</span
-              >
-            </div>
-
-            <!-- Main Title -->
-            <div class="floating">
-              <h1
-                class="text-5xl max-sm:text-2xl md:text-7xl font-bold mb-6"
-                data-aos="fade-up"
-              >
-                آیندهٔ صنعت در
-                <span class="gradient-text">متاورس واقعی</span>
-              </h1>
-            </div>
-
-            <!-- Description -->
-            <p
-              class="text-xl md:text-2xl text-blue-400 dark:text-white mb-4 max-w-3xl max-sm:text-xl mx-auto leading-relaxed fade-in-up stagger-3"
-              data-aos="zoom-out"
-            >
-              به پلتفرم دوقلوی دیجیتال ساتراپ ویرا سازان خوش آمدید
-            </p>
-
-            <p
-              data-aos="fade-right"
-              class="text-lg text-black dark:text-yellow-100 mb-12 max-w-3xl max-sm:text-sm mx-auto leading-relaxed fade-in-up stagger-4"
-            >
-              در این سیستم، هر تجهیز، کارخانه، یا دستگاه صنعتی شما در دنیای
-              دیجیتال بازآفرینی می‌شود. با ورود به حساب کاربری خود، می‌توانید
-              وضعیت لحظه‌ای دستگاه‌ها را ببینید، پارامترها را کنترل کنید و از
-              طریق داده‌های هوشمند، تصمیم‌های دقیق‌تر بگیرید.
-            </p>
-
-            <!-- CTA Buttons -->
-            <div
-              class="flex flex-wrap justify-center gap-4 mb-16 fade-in-up stagger-5"
-              data-aos="fade-down"
-              data-aos-easing="linear"
-              data-aos-duration="1500"
-            >
-              <a
-                href="./login.html"
-                class="group relative px-8 py-4 glass-effect rounded-xl border border-white/20 hover:border-white/40 transition-allrounded-xl font-bold max-sm:text-sm text-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50"
+        <div class="relative m-auto">
+          <!-- Content -->
+          <div class="container m-auto max-sm:mt-12 px-4 py-20">
+            <div class="max-w-5xl m-auto text-center">
+              <!-- Badge -->
+              <div
+                data-aos="zoom-in-down"
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect mb-8 fade-in-up stagger-1"
               >
                 <span
-                  class="relative z-10 flex items-center max-sm:text-sm gap-2"
+                  class="w-2 h-2 bg-green-400 rounded-full animate-pulse"
+                ></span>
+                <span class="text-lg max-sm:text-xs"
+                  >پلتفرم دوقلوی دیجیتال ساتراپ ویرا سازان</span
                 >
-                  ورود به پلتفرم
-                  <svg
-                    class="w-5 h-5 transition-transform group-hover:translate-x-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
-                    ></path>
-                  </svg>
-                </span>
-                <div
-                  class="absolute inset-0 glass-effect rounded-xl font-bold text-lg border border-white/20 hover:border-white/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                ></div>
-              </a>
+              </div>
 
-              <a
-                href="#features"
-                class="group px-8 py-4 glass-effect rounded-xl font-bold text-lg border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105 hover:bg-white/10"
+              <!-- Main Title -->
+              <div class="floating">
+                <h1
+                  class="text-5xl max-sm:text-2xl md:text-7xl font-bold mb-6"
+                  data-aos="fade-up"
+                >
+                  آیندهٔ صنعت در
+                  <span class="gradient-text">متاورس واقعی</span>
+                </h1>
+              </div>
+
+              <!-- Description -->
+              <p
+                class="text-xl md:text-2xl text-blue-400 dark:text-white mb-4 max-w-3xl max-sm:text-xl mx-auto leading-relaxed fade-in-up stagger-3"
+                data-aos="zoom-out"
               >
-                <span class="flex items-center max-sm:text-sm gap-2">
-                  بیشتر بدانید
-                  <svg
-                    class="w-5 h-5 transition-transform group-hover:translate-y-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M19 9l-7 7-7-7"
-                    ></path>
-                  </svg>
-                </span>
-              </a>
+                به پلتفرم دوقلوی دیجیتال ساتراپ ویرا سازان خوش آمدید
+              </p>
 
-              <a
-                href="#demo"
-                class="group px-8 py-4 glass-effect rounded-xl font-bold text-lg border border-blue-400/50 hover:border-blue-400 transition-all duration-300 hover:scale-105 hover:bg-blue-500/20"
+              <p
+                data-aos="fade-right"
+                class="text-lg text-black dark:text-yellow-100 mb-12 max-w-3xl max-sm:text-sm mx-auto leading-relaxed fade-in-up stagger-4"
               >
-                <span class="flex items-center max-sm:text-sm gap-2">
-                  <svg
-                    class="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-                    ></path>
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    ></path>
-                  </svg>
-                  درخواست دمو
-                </span>
-              </a>
-            </div>
+                در این سیستم، هر تجهیز، کارخانه، یا دستگاه صنعتی شما در دنیای
+                دیجیتال بازآفرینی می‌شود. با ورود به حساب کاربری خود، می‌توانید
+                وضعیت لحظه‌ای دستگاه‌ها را ببینید، پارامترها را کنترل کنید و از
+                طریق داده‌های هوشمند، تصمیم‌های دقیق‌تر بگیرید.
+              </p>
 
-            <!-- Stats -->
-            <div
-              class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto fade-in-up stagger-6"
-              data-aos="fade-left"
-              data-aos-anchor="#example-anchor"
-              data-aos-offset="500"
-              data-aos-duration="500"
-            >
-              <div class="glass-effect rounded-xl p-6 card-hover">
-                <div class="text-4xl max-sm:text-2xl font-bold text-gradient mb-2">۱۰۰+</div>
-                <div class="text-gray-400 text-sm">پروژه موفق</div>
+              <!-- CTA Buttons -->
+              <div
+                class="flex flex-wrap justify-center gap-4 mb-16 fade-in-up stagger-5"
+                data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1500"
+              >
+                <a
+                  href="./login.html"
+                  class="group relative px-8 py-4 glass-effect rounded-xl border border-white/20 hover:border-white/40 transition-allrounded-xl font-bold max-sm:text-sm text-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50"
+                >
+                  <span
+                    class="relative z-10 flex items-center max-sm:text-sm gap-2"
+                  >
+                    ورود به پلتفرم
+                    <svg
+                      class="w-5 h-5 transition-transform group-hover:translate-x-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
+                      ></path>
+                    </svg>
+                  </span>
+                  <div
+                    class="absolute inset-0 glass-effect rounded-xl font-bold text-lg border border-white/20 hover:border-white/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></div>
+                </a>
+
+                <a
+                  href="#features"
+                  class="group px-8 py-4 glass-effect rounded-xl font-bold text-lg border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105 hover:bg-white/10"
+                >
+                  <span class="flex items-center max-sm:text-sm gap-2">
+                    بیشتر بدانید
+                    <svg
+                      class="w-5 h-5 transition-transform group-hover:translate-y-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      ></path>
+                    </svg>
+                  </span>
+                </a>
+
+                <a
+                  href="#demo"
+                  class="group px-8 py-4 glass-effect rounded-xl font-bold text-lg border border-blue-400/50 hover:border-blue-400 transition-all duration-300 hover:scale-105 hover:bg-blue-500/20"
+                >
+                  <span class="flex items-center max-sm:text-sm gap-2">
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                      ></path>
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      ></path>
+                    </svg>
+                    درخواست دمو
+                  </span>
+                </a>
               </div>
-              <div class="glass-effect rounded-xl p-6 card-hover">
-                <div class="text-4xl max-sm:text-2xl font-bold text-gradient mb-2">۹۹.۹%</div>
-                <div class="text-gray-400 text-sm">دقت سیستم</div>
-              </div>
-              <div class="glass-effect rounded-xl p-6 card-hover">
-                <div class="text-4xl max-sm:text-2xl font-bold text-gradient mb-2">۲۴/۷</div>
-                <div class="text-gray-400 text-sm">پشتیبانی</div>
-              </div>
-              <div class="glass-effect rounded-xl p-6 card-hover">
-                <div class="text-4xl max-sm:text-2xl font-bold text-gradient mb-2">۵۰+</div>
-                <div class="text-gray-400 text-sm">مشتریان راضی</div>
+
+              <!-- Stats -->
+              <div
+                class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto fade-in-up stagger-6"
+                data-aos="fade-left"
+                data-aos-anchor="#example-anchor"
+                data-aos-offset="500"
+                data-aos-duration="500"
+              >
+                <div class="glass-effect rounded-xl p-6 card-hover">
+                  <div
+                    class="text-4xl max-sm:text-2xl font-bold text-gradient mb-2"
+                  >
+                    ۱۰۰+
+                  </div>
+                  <div class="text-gray-400 text-sm">پروژه موفق</div>
+                </div>
+                <div class="glass-effect rounded-xl p-6 card-hover">
+                  <div
+                    class="text-4xl max-sm:text-2xl font-bold text-gradient mb-2"
+                  >
+                    ۹۹.۹%
+                  </div>
+                  <div class="text-gray-400 text-sm">دقت سیستم</div>
+                </div>
+                <div class="glass-effect rounded-xl p-6 card-hover">
+                  <div
+                    class="text-4xl max-sm:text-2xl font-bold text-gradient mb-2"
+                  >
+                    ۲۴/۷
+                  </div>
+                  <div class="text-gray-400 text-sm">پشتیبانی</div>
+                </div>
+                <div class="glass-effect rounded-xl p-6 card-hover">
+                  <div
+                    class="text-4xl max-sm:text-2xl font-bold text-gradient mb-2"
+                  >
+                    ۵۰+
+                  </div>
+                  <div class="text-gray-400 text-sm">مشتریان راضی</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Scroll Indicator -->
+          <!-- Scroll Indicator -->
+        </div>
         <div
-          class="absolute bottom-10 left-1/2 transform max-sm:bottom-6 -translate-x-1/2 animate-bounce"
+          class="absolute bottom-10 border-2 rounded-full flex items-center justify-center border-white p-3 w-12 h-12 cursor-pointer left-1/2 transform max-sm:bottom-6 -translate-x-1/2 animate-bounce"
         >
           <svg
-            class="w-6 h-6 text-white/50"
+            class="w-6 h-6  text-white/50"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -408,9 +423,9 @@
       <section id="features" class="relative py-24 bg-slate-900/50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
           <!-- Section Header -->
-          <div class="max-w-3xl mb-16">
+          <div class="max-w-3xl text-center mx-auto mb-16">
             <div
-              class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect mb-6"
+              class="inline-flex items-center justify-start gap-2 px-4 py-2 rounded-full glass-effect mb-6"
             >
               <svg
                 class="w-5 h-5 text-blue-400"
@@ -427,7 +442,9 @@
               </svg>
               <span class="text-sm">راهکارهای صنعتی</span>
             </div>
-            <h2 class="text-4xl max-sm:text-2xl md:text-5xl font-bold text-white mb-6">
+            <h2
+              class="text-4xl max-sm:text-2xl md:text-5xl font-bold text-white mb-6"
+            >
               راهکارهای دوقلوی دیجیتال برای
               <span class="text-gradient">صنایع مختلف</span>
             </h2>

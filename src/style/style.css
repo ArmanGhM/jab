@@ -337,6 +337,29 @@ model-viewer {
 .stat-card:hover::before {
   left: 100%;
 }
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(0, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: floatParticle 5s infinite ease-in-out;
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-40px) scale(1.3);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
 
 .feature-icon {
   transition: all 0.3s;
@@ -344,14 +367,6 @@ model-viewer {
 
 .feature-card:hover .feature-icon {
   transform: scale(1.2) rotate(360deg);
-}
-
-#vanta-bg {
-  filter: brightness(0.85);
-}
-
-.dark #vanta-bg {
-  filter: brightness(0.6);
 }
 
 .nav-blur {
