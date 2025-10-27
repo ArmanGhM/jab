@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ورود به پلتفرم - ساتراپ ویرا سازان</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.globe.min.js"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1173d4",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              vazir: ["Vazirmatn", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      * {
+        font-family: "Vazirmatn", sans-serif;
+      }
+
+      .gradient-bg {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 102, 255, 0.9),
+          rgba(0, 94, 188, 0.95)
+        );
+      }
+
+      .dark .gradient-bg {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 102, 255, 0.4),
+          rgba(255, 221, 0, 0.4)
+        );
+      }
+
+      #vanta-bg {
+        filter: brightness(0.9);
+      }
+
+      .dark #vanta-bg {
+        filter: brightness(0.7);
+      }
+
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .dark .glass-effect {
+        background: rgba(16, 25, 34, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .input-field {
+        transition: all 0.3s ease;
+      }
+
+      .input-field:focus {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(17, 115, 212, 0.3);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #0066ff, #005ebc);
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 102, 255, 0.4);
+      }
+
+      .feature-card {
+        transition: all 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .floating {
+        animation: float 3s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300"
+  >
+    <!-- Theme Toggle Button -->
+    <button
+      id="theme-toggle"
+      class="fixed top-6 left-6 z-50 w-12 h-12 border-2 border-white bg-blue-600 dark:bg-gray-800 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg"
+    >
+      <svg
+        class="w-6 h-6 text-white hidden dark:block"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+          clip-rule="evenodd"
+        ></path>
+      </svg>
+      <svg
+        class="w-6 h-6 text-white block dark:hidden"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path
+          d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+        ></path>
+      </svg>
+    </button>
+
+    <!-- Vanta Background -->
+    <div id="vanta-bg" class="fixed inset-0 z-0"></div>
+
+    <!-- Main Container -->
+    <div
+      class="relative z-10 min-h-screen flex items-center justify-center px-4 py-12"
+    >
+      <div class="w-full max-w-6xl grid lg:grid-cols-2 gap-8 items-center">
+        <!-- Right Side - Information -->
+        <div class="text-center lg:text-right space-y-6 order-2 lg:order-1">
+          <div class="floating">
+            <h1
+              class="text-4xl lg:text-5xl font-bold text-blue-700 dark:text-white leading-tight"
+            >
+              به پلتفرم دوقلوی دیجیتال<br />
+              <span class="text-blue-500 dark:text-yellow-400"
+                >ساتراپ ویرا سازان</span
+              ><br />
+              خوش آمدید
+            </h1>
+          </div>
+
+          <p
+            class="text-lg text-gray-700 dark:text-gray-300 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+          >
+            در این سیستم، هر تجهیز، کارخانه، یا دستگاه صنعتی شما در دنیای
+            دیجیتال بازآفرینی می‌شود. با ورود به حساب کاربری خود، می‌توانید
+            وضعیت لحظه‌ای دستگاه‌ها را ببینید، پارامترها را کنترل کنید و از طریق
+            داده‌های هوشمند، تصمیم‌های دقیق‌تر بگیرید.
+          </p>
+
+          <!-- Features -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6">
+            <div class="feature-card glass-effect p-4 rounded-xl shadow-lg">
+              <div class="text-3xl mb-2">📊</div>
+              <h3 class="font-bold text-sm mb-1">نظارت لحظه‌ای</h3>
+              <p class="text-xs text-gray-600 dark:text-gray-400">
+                مانیتورینگ 24/7 تجهیزات
+              </p>
+            </div>
+            <div class="feature-card glass-effect p-4 rounded-xl shadow-lg">
+              <div class="text-3xl mb-2">🤖</div>
+              <h3 class="font-bold text-sm mb-1">هوش مصنوعی</h3>
+              <p class="text-xs text-gray-600 dark:text-gray-400">
+                تحلیل پیشرفته داده‌ها
+              </p>
+            </div>
+            <div class="feature-card glass-effect p-4 rounded-xl shadow-lg">
+              <div class="text-3xl mb-2">⚡</div>
+              <h3 class="font-bold text-sm mb-1">کنترل هوشمند</h3>
+              <p class="text-xs text-gray-600 dark:text-gray-400">
+                مدیریت از راه دور
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Left Side - Login Form -->
+        <div class="order-1 lg:order-2">
+          <div
+            class="glass-effect rounded-3xl shadow-2xl p-8 lg:p-10 max-w-md mx-auto"
+          >
+            <div class="text-center mb-8">
+              <div
+                class="w-20 h-20 bg-blue-600 dark:bg-blue-500 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-lg"
+              >
+                <svg
+                  class="w-10 h-10 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                  ></path>
+                </svg>
+              </div>
+              <h2 class="text-2xl font-bold mb-2">ورود به پلتفرم</h2>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                اطلاعات خود را وارد کنید
+              </p>
+            </div>
+
+            <form class="space-y-6" onsubmit="handleLogin(event)">
+              <div>
+                <label class="block text-sm font-medium mb-2"
+                  >نام کاربری یا ایمیل</label
+                >
+                <input
+                  type="text"
+                  class="input-field w-full px-4 py-3 rounded-xl border-2 border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-400 outline-none bg-white dark:bg-gray-800 transition-all"
+                  placeholder="username@example.com"
+                  required
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium mb-2">رمز عبور</label>
+                <input
+                  type="password"
+                  class="input-field w-full px-4 py-3 rounded-xl border-2 border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-400 outline-none bg-white dark:bg-gray-800 transition-all"
+                  placeholder="••••••••"
+                  required
+                />
+              </div>
+
+              <div class="flex items-center justify-between text-sm">
+                <label class="flex items-center cursor-pointer">
+                  <input
+                    type="checkbox"
+                    class="ml-2 w-4 h-4 text-blue-600 rounded"
+                  />
+                  <span>مرا به خاطر بسپار</span>
+                </label>
+                <a
+                  href="#"
+                  class="text-blue-600 dark:text-blue-400 hover:underline"
+                  >فراموشی رمز عبور؟</a
+                >
+              </div>
+
+              <button
+                type="submit"
+                class="btn-primary w-full py-3 rounded-xl text-white font-bold shadow-lg"
+              >
+                ورود به پلتفرم
+              </button>
+
+              <div class="grid grid-cols-2 gap-3">
+                <a
+                  href="#about"
+                  class="py-2.5 rounded-xl border-2 border-blue-500 text-blue-500 dark:border-blue-400 dark:text-blue-400 hover:bg-blue-500 hover:text-white dark:hover:bg-blue-400 transition-all text-center font-medium text-sm"
+                >
+                  بیشتر بدانید
+                </a>
+                <a
+                  href="#demo"
+                  class="py-2.5 rounded-xl border-2 border-green-500 text-green-500 dark:border-green-400 dark:text-green-400 hover:bg-green-500 hover:text-white dark:hover:bg-green-400 transition-all text-center font-medium text-sm"
+                >
+                  درخواست دمو
+                </a>
+              </div>
+            </form>
+
+            <div
+              class="mt-6 pt-6 border-t border-gray-300 dark:border-gray-700 text-center"
+            >
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                حساب کاربری ندارید؟
+                <a
+                  href="#signup"
+                  class="text-blue-600 dark:text-blue-400 hover:underline font-medium"
+                  >ثبت نام کنید</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let vantaEffect = null;
+
+      function initVanta() {
+        const isDark = document.documentElement.classList.contains("dark");
+        const bgColor = isDark ? "#0a0a0a" : "#ffffff";
+        const itemColor = isDark ? "#ffffff" : "#0066ff";
+
+        if (vantaEffect) {
+          vantaEffect.destroy();
+        }
+
+        if (typeof VANTA !== "undefined" && typeof THREE !== "undefined") {
+          vantaEffect = VANTA.GLOBE({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.0,
+            minWidth: 200.0,
+            scale: 1.0,
+            scaleMobile: 1.0,
+            color: isDark ? 0x3399ff : 0x0066ff,
+            color2: isDark ? 0xffdd00 : 0x005ebc,
+            backgroundColor: bgColor,
+            size: 1.2,
+            backgroundAlpha: 1.0,
+          });
+        }
+      }
+
+      function toggleTheme() {
+        const htmlElement = document.documentElement;
+        const isDark = htmlElement.classList.contains("dark");
+
+        if (isDark) {
+          htmlElement.classList.remove("dark");
+          localStorage.setItem("theme", "light");
+        } else {
+          htmlElement.classList.add("dark");
+          localStorage.setItem("theme", "dark");
+        }
+
+        setTimeout(() => {
+          initVanta();
+        }, 100);
+      }
+
+      function initializeTheme() {
+        const savedTheme = localStorage.getItem("theme");
+        const htmlElement = document.documentElement;
+
+        if (savedTheme === "dark") {
+          htmlElement.classList.add("dark");
+        } else {
+          htmlElement.classList.remove("dark");
+        }
+      }
+
+      function handleLogin(event) {
+        event.preventDefault();
+        alert("سیستم ورود در حال توسعه است. این یک نسخه نمایشی می‌باشد.");
+        return false;
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        initializeTheme();
+
+        setTimeout(() => {
+          initVanta();
+        }, 100);
+
+        const themeToggle = document.getElementById("theme-toggle");
+        if (themeToggle) {
+          themeToggle.addEventListener("click", toggleTheme);
+        }
+      });
+
+      let resizeTimeout;
+      window.addEventListener("resize", () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          if (vantaEffect) {
+            initVanta();
+          }
+        }, 300);
+      });
+    </script>
+  </body>
+</html>

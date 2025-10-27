@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./src/style/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/style/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1173d4",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+              vazir: ["Vazirmatn", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <script
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+      type="module"
+    ></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body
+    class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300"
+  >
+    <div
+      id="nav-mobile-bg"
+      class="hidden fixed w-full backdrop-blur-sm z-40 h-screen"
+    ></div>
+
+    <div
+      id="nav-mobile-bg"
+      class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-opacity duration-300 opacity-0"
+    ></div>
+
+    <nav
+      data-aos="fade-down"
+      class="w-full bg-[#005ebc] backdrop-blur-sm text-white fixed top-0 left-0 z-50 transition-all duration-300"
+    >
+      <!-- منوی موبایل با انیمیشن -->
+      <div
+        id="nav-item"
+        class="fixed bg-gradient dark:text-white text-black w-0 text-end backdrop-blur-3xl h-screen shadow-2xl transition-all duration-500 ease-in-out right-0 top-[84px] z-50"
+      >
+        <ul class="flex justify-start items-center flex-col gap-6 pt-10 px-6">
+          <li class="w-full">
+            <a
+              href=""
+              class="block text-lg font-semibold dark:hover:text-yellow-400 hover:text-blue-700 hover:translate-x-2 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
+            >
+              🏠 خانه
+            </a>
+          </li>
+          <li class="w-full">
+            <a
+              href=""
+              class="block text-lg font-semibold dark:hover:text-yellow-400 hover:text-blue-700 hover:translate-x-2 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
+            >
+              🎮 دمو ها
+            </a>
+          </li>
+          <li class="w-full">
+            <a
+              href=""
+              class="block text-lg font-semibold dark:hover:text-yellow-400 hover:text-blue-700 hover:translate-x-2 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
+            >
+              📞 تماس با ما
+            </a>
+          </li>
+          <li class="w-full">
+            <a
+              href=""
+              class="block text-lg font-semibold dark:hover:text-yellow-400 hover:text-blue-700 hover:translate-x-2 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
+            >
+              ℹ️ درباره ی ما
+            </a>
+          </li>
+          <li class="w-full">
+            <div
+              class="block text-lg font-semibold dark:hover:text-yellow-400 hover:text-blue-700 hover:translate-x-2 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
+            >
+              🌐 تغییر زبان
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="w-full h-20 max-w-[1440px] max-md:flex-row-reverse flex justify-between items-center mx-auto px-4"
+      >
+        <!-- دکمه همبرگر با انیمیشن -->
+        <button
+          id="menu-hambgre"
+          class="hidden max-md:flex p-2 w-12 h-12 border-2 border-solid flex-col items-center justify-center gap-1.5 border-white rounded-2xl hover:bg-white/10 transition-all duration-300 group"
+        >
+          <div
+            class="w-7 bg-white rounded-full h-[3px] transition-all duration-300 group-hover:w-8"
+          ></div>
+          <div
+            class="w-7 bg-white rounded-full h-[3px] transition-all duration-300 group-hover:w-6"
+          ></div>
+          <div
+            class="w-7 bg-white rounded-full h-[3px] transition-all duration-300 group-hover:w-8"
+          ></div>
+        </button>
+
+        <!-- لوگو -->
+        <div class="w-[100px] h-14">
+          <img
+            src="./public/logo.png"
+            alt="logoWeb"
+            class="w-full h-full object-contain"
+          />
+        </div>
+
+        <!-- منوی دسکتاپ -->
+        <div class="max-md:hidden">
+          <ul class="flex justify-center items-center flex-row-reverse gap-6">
+            <li>
+              <a
+                href=""
+                class="hover:text-yellow-300 transition-colors duration-300 font-medium"
+              >
+                خانه
+              </a>
+            </li>
+            <li>
+              <a
+                href=""
+                class="hover:text-yellow-300 transition-colors duration-300 font-medium"
+              >
+                دمو ها
+              </a>
+            </li>
+            <li>
+              <a
+                href=""
+                class="hover:text-yellow-300 transition-colors duration-300 font-medium"
+              >
+                تماس با ما
+              </a>
+            </li>
+            <li>
+              <a
+                href=""
+                class="hover:text-yellow-300 transition-colors duration-300 font-medium"
+              >
+                درباره ی ما
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- دکمه‌های راست -->
+        <div class="flex gap-2">
+          <button
+            class="p-2 px-4 border-2 border-solid max-sm:hidden border-white rounded-md hover:bg-white hover:text-blue-600 transition-all duration-300 font-medium"
+          >
+            🌐 تغییر زبان
+          </button>
+          <button
+            id="theme-dark"
+            class="w-12 h-12 border-2 border-white border-solid flex items-center justify-center rounded-full hover:bg-white/10 hover:rotate-180 transition-all duration-500"
+          ></button>
+        </div>
+      </div>
+
+      <!-- نوار پیشرفت اسکرول -->
+      <div class="scrollbar">
+        <div class="scrolled"></div>
+      </div>
+    </nav>
+    <div class="w-full h-[85px]"></div>
+    <header>
+      <div
+        id="vanta-bg"
+        class="h-screen flex items-center justify-center relative"
+      >
+        <!-- Animated Background Particles -->
+        <div class="absolute inset-0 overflow-hidden">
+          <div
+            class="particle"
+            style="left: 10%; top: 20%; animation-delay: 0s"
+          ></div>
+          <div
+            class="particle"
+            style="left: 80%; top: 40%; animation-delay: 1s"
+          ></div>
+          <div
+            class="particle"
+            style="left: 30%; top: 60%; animation-delay: 2s"
+          ></div>
+          <div
+            class="particle"
+            style="left: 70%; top: 80%; animation-delay: 3s"
+          ></div>
+          <div
+            class="particle"
+            style="left: 50%; top: 30%; animation-delay: 1.5s"
+          ></div>
+          <div
+            class="particle"
+            style="left: 20%; top: 70%; animation-delay: 2.5s"
+          ></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 container mx-auto px-4 py-20">
+          <div class="max-w-5xl mx-auto text-center">
+            <!-- Badge -->
+            <div
+              data-aos="zoom-in-down"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect mb-8 fade-in-up stagger-1"
+            >
+              <span
+                class="w-2 h-2 bg-green-400 rounded-full animate-pulse"
+              ></span>
+              <span class="text-sm"
+                >پلتفرم دوقلوی دیجیتال ساتراپ ویرا سازان</span
+              >
+            </div>
+
+            <!-- Main Title -->
+            <div class="floating">
+              <h1
+                class="text-5xl md:text-7xl font-bold mb-6"
+                data-aos="fade-up"
+              >
+                آیندهٔ صنعت در
+                <span class="gradient-text">متاورس واقعی</span>
+              </h1>
+            </div>
+
+            <!-- Description -->
+            <p
+              class="text-xl md:text-2xl text-blue-400 dark:text-white mb-4 max-w-3xl mx-auto leading-relaxed fade-in-up stagger-3"
+              data-aos="zoom-out"
+            >
+              به پلتفرم دوقلوی دیجیتال ساتراپ ویرا سازان خوش آمدید
+            </p>
+
+            <p
+              data-aos="fade-right"
+              class="text-lg text-black dark:text-yellow-100 mb-12 max-w-3xl mx-auto leading-relaxed fade-in-up stagger-4"
+            >
+              در این سیستم، هر تجهیز، کارخانه، یا دستگاه صنعتی شما در دنیای
+              دیجیتال بازآفرینی می‌شود. با ورود به حساب کاربری خود، می‌توانید
+              وضعیت لحظه‌ای دستگاه‌ها را ببینید، پارامترها را کنترل کنید و از
+              طریق داده‌های هوشمند، تصمیم‌های دقیق‌تر بگیرید.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div
+              class="flex flex-wrap justify-center gap-4 mb-16 fade-in-up stagger-5"
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="1500"
+            >
+              <a
+                href="./login.html"
+                class="group relative px-8 py-4 glass-effect rounded-xl border border-white/20 hover:border-white/40 transition-allrounded-xl font-bold text-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50"
+              >
+                <span class="relative z-10 flex items-center gap-2">
+                  ورود به پلتفرم
+                  <svg
+                    class="w-5 h-5 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
+                    ></path>
+                  </svg>
+                </span>
+                <div
+                  class="absolute inset-0 glass-effect rounded-xl font-bold text-lg border border-white/20 hover:border-white/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+              </a>
+
+              <a
+                href="#features"
+                class="group px-8 py-4 glass-effect rounded-xl font-bold text-lg border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105 hover:bg-white/10"
+              >
+                <span class="flex items-center gap-2">
+                  بیشتر بدانید
+                  <svg
+                    class="w-5 h-5 transition-transform group-hover:translate-y-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+
+              <a
+                href="#demo"
+                class="group px-8 py-4 glass-effect rounded-xl font-bold text-lg border border-blue-400/50 hover:border-blue-400 transition-all duration-300 hover:scale-105 hover:bg-blue-500/20"
+              >
+                <span class="flex items-center gap-2">
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                    ></path>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  درخواست دمو
+                </span>
+              </a>
+            </div>
+
+            <!-- Stats -->
+            <div
+              class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto fade-in-up stagger-6"
+              data-aos="fade-left"
+              data-aos-anchor="#example-anchor"
+              data-aos-offset="500"
+              data-aos-duration="500"
+            >
+              <div class="glass-effect rounded-xl p-6 card-hover">
+                <div class="text-4xl font-bold text-gradient mb-2">۱۰۰+</div>
+                <div class="text-gray-400 text-sm">پروژه موفق</div>
+              </div>
+              <div class="glass-effect rounded-xl p-6 card-hover">
+                <div class="text-4xl font-bold text-gradient mb-2">۹۹.۹%</div>
+                <div class="text-gray-400 text-sm">دقت سیستم</div>
+              </div>
+              <div class="glass-effect rounded-xl p-6 card-hover">
+                <div class="text-4xl font-bold text-gradient mb-2">۲۴/۷</div>
+                <div class="text-gray-400 text-sm">پشتیبانی</div>
+              </div>
+              <div class="glass-effect rounded-xl p-6 card-hover">
+                <div class="text-4xl font-bold text-gradient mb-2">۵۰+</div>
+                <div class="text-gray-400 text-sm">مشتریان راضی</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div
+          class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
+        >
+          <svg
+            class="w-6 h-6 text-white/50"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            ></path>
+          </svg>
+        </div>
+      </div>
+    </header>
+    <main class="">
+      <!-- Industry Solutions Section -->
+      <section id="features" class="relative py-24 bg-slate-900/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Section Header -->
+          <div class="max-w-3xl mb-16">
+            <div
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect mb-6"
+            >
+              <svg
+                class="w-5 h-5 text-blue-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                ></path>
+              </svg>
+              <span class="text-sm">راهکارهای صنعتی</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+              راهکارهای دوقلوی دیجیتال برای
+              <span class="text-gradient">صنایع مختلف</span>
+            </h2>
+            <p class="text-lg text-gray-400 leading-relaxed">
+              ساتراپ ویرا سازان راهکارهای دوقلوی دیجیتال سفارشی‌شده برای طیف
+              گسترده‌ای از صنایع ارائه می‌دهد و به کسب‌وکارها کمک می‌کند تا
+              چالش‌های منحصربه‌فرد خود را حل کرده و به اهدافشان دست یابند.
+            </p>
+          </div>
+
+          <!-- Cards Grid -->
+          <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Card 1: Manufacturing -->
+            <div
+              class="group relative overflow-hidden rounded-2xl card-hover cursor-pointer"
+            >
+              <!-- Image -->
+              <div
+                class="h-96 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800');
+                "
+              ></div>
+
+              <!-- Overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"
+              ></div>
+
+              <!-- Content -->
+              <div
+                class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-blue-500/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-blue-500/40 transition-colors duration-300"
+                  >
+                    <svg
+                      class="w-6 h-6 text-blue-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                      ></path>
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-bold text-white">تولید و ساخت</h3>
+                </div>
+                <p
+                  class="text-gray-300 leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100"
+                >
+                  بهینه‌سازی فرآیندهای تولید، بهبود کنترل کیفیت و کاهش زمان توقف
+                  با دوقلوی دیجیتال تسهیلات تولیدی شما.
+                </p>
+                <div
+                  class="mt-4 flex items-center gap-2 text-blue-400 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200"
+                >
+                  <span class="text-sm font-semibold">اطلاعات بیشتر</span>
+                  <svg
+                    class="w-4 h-4 transition-transform group-hover:translate-x-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Energy -->
+            <div
+              class="group relative overflow-hidden rounded-2xl card-hover cursor-pointer"
+            >
+              <div
+                class="h-96 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800');
+                "
+              ></div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"
+              ></div>
+              <div
+                class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-yellow-500/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-yellow-500/40 transition-colors duration-300"
+                  >
+                    <svg
+                      class="w-6 h-6 text-yellow-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-bold text-white">انرژی</h3>
+                </div>
+                <p
+                  class="text-gray-300 leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100"
+                >
+                  افزایش بهره‌وری انرژی، بهینه‌سازی تخصیص منابع و پیش‌بینی خرابی
+                  تجهیزات در بخش انرژی با تکنولوژی دوقلوی دیجیتال.
+                </p>
+                <div
+                  class="mt-4 flex items-center gap-2 text-yellow-400 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200"
+                >
+                  <span class="text-sm font-semibold">اطلاعات بیشتر</span>
+                  <svg
+                    class="w-4 h-4 transition-transform group-hover:translate-x-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Infrastructure -->
+            <div
+              class="group relative overflow-hidden rounded-2xl card-hover cursor-pointer"
+            >
+              <div
+                class="h-96 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800');
+                "
+              ></div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"
+              ></div>
+              <div
+                class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-purple-500/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-purple-500/40 transition-colors duration-300"
+                  >
+                    <svg
+                      class="w-6 h-6 text-purple-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                      ></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-bold text-white">زیرساخت</h3>
+                </div>
+                <p
+                  class="text-gray-300 leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100"
+                >
+                  بهبود مدیریت زیرساخت، بهینه‌سازی استفاده از منابع و افزایش
+                  ایمنی با دوقلوی دیجیتال شهرها و زیرساخت‌های حیاتی.
+                </p>
+                <div
+                  class="mt-4 flex items-center gap-2 text-purple-400 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200"
+                >
+                  <span class="text-sm font-semibold">اطلاعات بیشتر</span>
+                  <svg
+                    class="w-4 h-4 transition-transform group-hover:translate-x-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom CTA -->
+          <div class="mt-16 text-center">
+            <div
+              class="inline-flex flex-col md:flex-row items-center gap-4 glass-effect rounded-2xl p-8"
+            >
+              <div class="text-right md:ml-8">
+                <h3 class="text-2xl font-bold mb-2">صنعت شما اینجا نیست؟</h3>
+                <p class="text-gray-400">
+                  ما راهکارهای سفارشی برای هر صنعتی ارائه می‌دهیم
+                </p>
+              </div>
+              <a
+                href="#contact"
+                class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl font-bold whitespace-nowrap hover:scale-105 transition-transform duration-300 hover:shadow-2xl hover:shadow-blue-500/50"
+              >
+                تماس با ما
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="relative py-24 bg-gradient-to-b from-slate-900/50 to-slate-900"
+      >
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Section Header -->
+          <div class="text-center mb-16">
+            <div
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect mb-6"
+            >
+              <svg
+                class="w-5 h-5 text-purple-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+                ></path>
+              </svg>
+              <span class="text-sm">مقالات و اخبار</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+              آخرین <span class="text-gradient">اخبار و مقالات</span>
+            </h2>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+              با آخرین پیشرفت‌ها و مقالات تخصصی در حوزه دوقلوی دیجیتال آشنا شوید
+            </p>
+          </div>
+
+          <!-- Articles Grid -->
+          <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Article 1 -->
+            <article
+              class="group glass-effect rounded-2xl overflow-hidden card-hover"
+            >
+              <div class="relative overflow-hidden h-56">
+                <img
+                  src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600"
+                  alt="مقاله"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div
+                  class="absolute top-4 right-4 px-3 py-1 bg-blue-600 rounded-full text-xs font-semibold"
+                >
+                  فناوری
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-4 text-sm text-gray-400 mb-3">
+                  <span class="flex items-center gap-1">
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      ></path>
+                    </svg>
+                    ۱۵ دی ۱۴۰۳
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      ></path>
+                    </svg>
+                    ۵ دقیقه مطالعه
+                  </span>
+                </div>
+                <h3
+                  class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors"
+                >
+                  آینده صنعت با دوقلوی دیجیتال
+                </h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                  دوقلوی دیجیتال چگونه صنایع را متحول می‌کند و چه تأثیری بر
+                  آینده تولید دارد؟
+                </p>
+                <a
+                  href="#"
+                  class="inline-flex items-center gap-2 text-blue-400 font-semibold text-sm group-hover:gap-3 transition-all"
+                >
+                  ادامه مطلب
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article
+              class="group glass-effect rounded-2xl overflow-hidden card-hover"
+            >
+              <div class="relative overflow-hidden h-56">
+                <img
+                  src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600"
+                  alt="مقاله"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div
+                  class="absolute top-4 right-4 px-3 py-1 bg-purple-600 rounded-full text-xs font-semibold"
+                >
+                  راهنما
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-4 text-sm text-gray-400 mb-3">
+                  <span class="flex items-center gap-1">
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      ></path>
+                    </svg>
+                    ۱۰ دی ۱۴۰۳
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      ></path>
+                    </svg>
+                    ۸ دقیقه مطالعه
+                  </span>
+                </div>
+                <h3
+                  class="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors"
+                >
+                  ۵ گام برای پیاده‌سازی دوقلوی دیجیتال
+                </h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                  راهنمای کامل شروع پروژه دوقلوی دیجیتال در سازمان‌های صنعتی
+                </p>
+                <a
+                  href="#"
+                  class="inline-flex items-center gap-2 text-purple-400 font-semibold text-sm group-hover:gap-3 transition-all"
+                >
+                  ادامه مطلب
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article
+              class="group glass-effect rounded-2xl overflow-hidden card-hover"
+            >
+              <div class="relative overflow-hidden h-56">
+                <img
+                  src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600"
+                  alt="مقاله"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div
+                  class="absolute top-4 right-4 px-3 py-1 bg-pink-600 rounded-full text-xs font-semibold"
+                >
+                  موردکاوی
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-4 text-sm text-gray-400 mb-3">
+                  <span class="flex items-center gap-1">
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      ></path>
+                    </svg>
+                    ۵ دی ۱۴۰۳
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      ></path>
+                    </svg>
+                    ۱۰ دقیقه مطالعه
+                  </span>
+                </div>
+                <h3
+                  class="text-xl font-bold text-white mb-3 group-hover:text-pink-400 transition-colors"
+                >
+                  کاهش ۴۰٪ هزینه‌ها با دوقلوی دیجیتال
+                </h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                  تجربه موفق یک کارخانه تولیدی در پیاده‌سازی سیستم دوقلوی
+                  دیجیتال
+                </p>
+                <a
+                  href="#"
+                  class="inline-flex items-center gap-2 text-pink-400 font-semibold text-sm group-hover:gap-3 transition-all"
+                >
+                  ادامه مطلب
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- View All Button -->
+          <div class="text-center mt-12">
+            <a
+              href="#blog"
+              class="inline-flex items-center gap-2 px-8 py-4 glass-effect rounded-xl font-bold hover:scale-105 transition-all duration-300 hover:bg-white/10 group"
+            >
+              مشاهده همه مقالات
+              <svg
+                class="w-5 h-5 transition-transform group-hover:translate-x-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter Section -->
+      <section class="relative py-20 overflow-hidden">
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-90"
+        ></div>
+        <div class="absolute inset-0 bg-gradient-animated"></div>
+
+        <div class="relative container mx-auto px-4">
+          <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-block mb-4">
+              <svg
+                class="w-16 h-16 text-white animate-pulse-glow"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+              در جریان آخرین اخبار باشید
+            </h2>
+            <p class="text-xl text-white/90 mb-8">
+              عضویت در خبرنامه و دریافت آخرین مقالات، اخبار و پیشنهادات ویژه
+            </p>
+            <form class="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
+              <input
+                type="email"
+                placeholder="آدرس ایمیل شما"
+                class="flex-1 px-6 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all"
+              />
+              <button
+                class="px-8 py-4 bg-white text-blue-600 rounded-xl font-bold hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+              >
+                عضویت در خبرنامه
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="relative bg-slate-950 text-white pt-20 pb-10 text-center">
+      <div class="container mx-auto px-4">
+        <!-- Main Footer Content -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16"
+        >
+          <!-- Company Info -->
+
+          <!-- Quick Links -->
+          <div class="flex flex-col items-center justify-center">
+            <h3 class="text-lg font-bold mb-6 m-auto flex items-center gap-2">
+              <div
+                class="w-1 h-6 bg-gradient-to-b from-blue-600 to-purple-600 rounded-full"
+              ></div>
+              دسترسی سریع
+            </h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-400 transition-colors inline-flex items-center gap-2 group"
+                >
+                  <svg
+                    class="w-4 h-4 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7"
+                    ></path>
+                  </svg>
+                  درباره ما
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-400 transition-colors inline-flex items-center gap-2 group"
+                >
+                  <svg
+                    class="w-4 h-4 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7"
+                    ></path>
+                  </svg>
+                  خدمات
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-400 transition-colors inline-flex items-center gap-2 group"
+                >
+                  <svg
+                    class="w-4 h-4 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7"
+                    ></path>
+                  </svg>
+                  نمونه‌کارها
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-400 transition-colors inline-flex items-center gap-2 group"
+                >
+                  <svg
+                    class="w-4 h-4 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7"
+                    ></path>
+                  </svg>
+                  مشتریان
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-400 transition-colors inline-flex items-center gap-2 group"
+                >
+                  <svg
+                    class="w-4 h-4 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7"
+                    ></path>
+                  </svg>
+                  تماس با ما
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="flex flex-col items-center justify-center m-auto">
+            <h3 class="text-lg font-bold mb-6 flex items-center gap-2">
+              <div
+                class="w-1 h-6 bg-gradient-to-b from-purple-600 to-pink-600 rounded-full"
+              ></div>
+              خدمات
+            </h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-purple-400 transition-colors inline-flex items-center gap-2 group"
+                >
+                  <svg
+                    class="w-4 h-4 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7"
+                    ></path>
+                  </svg>
+                  دوقلوی دیجیتال صنعتی
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-purple-400 transition-colors inline-flex items-center gap-2 group"
+                >
+                  <svg
+                    class="w-4 h-4 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7"
+                    ></path>
+                  </svg>
+                  مانیتورینگ لحظه‌ای
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-purple-400 transition-colors inline-flex items-center gap-2 group"
+                >
+                  <svg
+                    class="w-4 h-4 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7"
+                    ></path>
+                  </svg>
+                  تحلیل پیش‌بینانه
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="space-y-6 flex flex-col items-center justify-center m-auto"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"
+                  />
+                </svg>
+              </div>
+              <span class="text-2xl font-bold">ساتراپ ویرا سازان</span>
+            </div>
+            <p class="text-gray-400 leading-relaxed">
+              پیشرو در ارائه راهکارهای دوقلوی دیجیتال برای صنایع مختلف. ما با
+              تکنولوژی پیشرفته، آینده صنعت را می‌سازیم.
+            </p>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-lg bg-white/5 hover:bg-blue-600 flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+              >
+                <svg
+                  class="w-5 h-5 group-hover:rotate-12 transition-transform"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-lg bg-white/5 hover:bg-blue-600 flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+              >
+                <svg
+                  class="w-5 h-5 group-hover:rotate-12 transition-transform"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-lg bg-white/5 hover:bg-blue-600 flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+              >
+                <svg
+                  class="w-5 h-5 group-hover:rotate-12 transition-transform"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12.001 2.002c-5.522 0-9.999 4.477-9.999 9.999 0 4.99 3.656 9.126 8.437 9.879v-6.988h-2.54v-2.891h2.54V9.798c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.459h-1.264c-1.24 0-1.628.772-1.628 1.563v1.875h2.771l-.443 2.891h-2.328v6.988C18.344 21.129 22 16.992 22 12.001c0-5.522-4.477-9.999-9.999-9.999z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-lg bg-white/5 hover:bg-blue-600 flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+              >
+                <svg
+                  class="w-5 h-5 group-hover:rotate-12 transition-transform"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.dots.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./src/js/home.js"></script>
+    <script src="./src/js/app.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next@23.7.6/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.2.0/i18nextBrowserLanguageDetector.min.js"></script>
+  </body>
+</html>
