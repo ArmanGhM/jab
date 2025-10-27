@@ -10,7 +10,7 @@ function initVanta() {
   const isDark = document.documentElement.classList.contains("dark");
   const bgColor = isDark ? "#0A0E1A" : "#ECF3FF";
   const itemSmall = isDark ? "#46A6FF" : "#005CFF";
-  const itemHeader = isDark ? "FFD34D" : "#FFB300";
+  const itemHeader = isDark ? "#FFD34D" : "#FFB300";
 
   if (vantaEffect) {
     vantaEffect.destroy();
@@ -198,3 +198,25 @@ function menuClick() {
 }
 menuHambgre.addEventListener("click", menuClick);
 bgNavMobile.addEventListener("click", menuClick);
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
+
+// Parallax effect for particles
+document.addEventListener("mousemove", (e) => {
+  const particles = document.querySelectorAll(".particle");
+  const x = e.clientX / window.innerWidth;
+  const y = e.clientY / window.innerHeight;
+
+  particles.forEach((particle, index) => {
+    const speed = (index + 1) * 10;
+    particle.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+  });
+});

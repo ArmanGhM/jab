@@ -181,7 +181,7 @@
           </button>
           <button
             id="theme-dark"
-            class="w-12 h-12 border-2  border-white border-solid flex items-center justify-center rounded-full hover:bg-white/10 hover:rotate-180 transition-all duration-500"
+            class="w-12 h-12 border-2 border-white border-solid flex items-center justify-center rounded-full hover:bg-white/10 hover:rotate-180 transition-all duration-500"
           ></button>
         </div>
       </div>
@@ -195,8 +195,14 @@
     <header>
       <div
         id="vanta-bg"
-        class="h-screen max-sm:h-auto flex items-center justify-center relative"
+        class="min-h-screen max-sm:min-h-screen flex items-center justify-center relative"
       >
+        <!-- دایره‌های نور پس‌زمینه -->
+        <div class="circle-blur-1"></div>
+        <div class="circle-blur-2"></div>
+        <div class="light-layer"></div>
+
+        <!-- ذرات متحرک -->
         <div
           class="particle"
           style="left: 10%; top: 20%; animation-delay: 0s"
@@ -221,45 +227,52 @@
           class="particle"
           style="left: 20%; top: 70%; animation-delay: 2.5s"
         ></div>
+        <div
+          class="particle"
+          style="left: 90%; top: 15%; animation-delay: 2.2s"
+        ></div>
+        <div
+          class="particle"
+          style="left: 15%; top: 85%; animation-delay: 3.5s"
+        ></div>
 
-        <!-- Content -->
-        <div class="relative z-10 container mx-auto max-sm:mt-12 px-4 py-20">
-          <div class="max-w-5xl mx-auto text-center">
+        <!-- محتوا -->
+        <div class="relative z-10 container mx-auto max-sm:mt-20 px-4 py-20">
+          <div class="max-w-5xl mx-auto text-center relative">
             <!-- Badge -->
             <div
-              data-aos="zoom-in-down"
-              class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect mb-8 fade-in-up stagger-1"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-effect badge-glow mb-8"
             >
               <span
                 class="w-2 h-2 bg-green-400 rounded-full animate-pulse"
               ></span>
-              <span class="text-sm max-sm:text-xs"
-                >پلتفرم دوقلوی دیجیتال ساتراپ ویرا سازان</span
+              <span
+                class="text-sm max-sm:text-xs text-black dark:text-white font-medium"
               >
+                پلتفرم دوقلوی دیجیتال ساتراپ ویرا سازان
+              </span>
             </div>
 
-            <!-- Main Title -->
+            <!-- عنوان اصلی -->
             <div class="floating">
               <h1
-                class="text-5xl max-sm:text-2xl md:text-7xl font-bold mb-6"
-                data-aos="fade-up"
+                class="text-6xl max-sm:text-3xl md:text-7xl lg:text-8xl font-black mb-6"
               >
-                آیندهٔ صنعت در
-                <span class="gradient-text">متاورس واقعی</span>
+                <span class="text-white shadow-text">آیندهٔ صنعت در</span>
+                <br />
+                <span class="gradient-text text-underline">متاورس واقعی</span>
               </h1>
             </div>
 
-            <!-- Description -->
+            <!-- توضیحات -->
             <p
-              class="text-xl md:text-2xl text-blue-400 dark:text-white mb-4 max-w-3xl max-sm:text-xl mx-auto leading-relaxed fade-in-up stagger-3"
-              data-aos="zoom-out"
+              class="text-2xl max-sm:text-lg md:text-3xl font-bold text-blue-300 mb-4 max-w-3xl mx-auto leading-relaxed shadow-text"
             >
               به پلتفرم دوقلوی دیجیتال ساتراپ ویرا سازان خوش آمدید
             </p>
 
             <p
-              data-aos="fade-right"
-              class="text-lg text-black shadow-text b dark:text-yellow-200  mb-12 max-w-3xl max-sm:text-sm mx-auto leading-relaxed fade-in-up stagger-4"
+              class="text-lg max-sm:text-base text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed shadow-text-light px-4"
             >
               در این سیستم، هر تجهیز، کارخانه، یا دستگاه صنعتی شما در دنیای
               دیجیتال بازآفرینی می‌شود. با ورود به حساب کاربری خود، می‌توانید
@@ -267,20 +280,18 @@
               طریق داده‌های هوشمند، تصمیم‌های دقیق‌تر بگیرید.
             </p>
 
-            <!-- CTA Buttons -->
+            <!-- دایره نور مرکزی -->
             <div
-              class="flex flex-wrap justify-center gap-4 mb-16 fade-in-up stagger-5"
-              data-aos="fade-down"
-              data-aos-easing="linear"
-              data-aos-duration="1500"
-            >
+              class="w-[400px] max-sm:w-[250px] h-[400px] max-sm:h-[250px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full absolute -z-10 sarcle"
+            ></div>
+
+            <!-- دکمه‌های اکشن -->
+            <div class="flex flex-wrap justify-center gap-4 mb-16">
               <a
                 href="./login.html"
-                class="group relative px-8 py-4 glass-effect rounded-xl border border-white/20 hover:border-white/40 transition-allrounded-xl font-bold max-sm:text-sm text-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50"
+                class="group relative px-8 py-4 btn-gradient text-white rounded-xl font-bold text-lg max-sm:text-sm overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50"
               >
-                <span
-                  class="relative z-10 flex items-center max-sm:text-sm gap-2"
-                >
+                <span class="relative z-10 flex items-center gap-2">
                   ورود به پلتفرم
                   <svg
                     class="w-5 h-5 transition-transform group-hover:translate-x-1"
@@ -296,16 +307,13 @@
                     ></path>
                   </svg>
                 </span>
-                <div
-                  class="absolute inset-0 glass-effect rounded-xl font-bold text-lg border border-white/20 hover:border-white/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                ></div>
               </a>
 
               <a
                 href="#features"
-                class="group px-8 py-4 glass-effect rounded-xl font-bold text-lg border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105 hover:bg-white/10"
+                class="group px-8 py-4 glass-effect rounded-xl font-bold text-lg max-sm:text-sm text-blue-900 dark:text-white transition-all duration-300 hover:scale-105"
               >
-                <span class="flex items-center max-sm:text-sm gap-2">
+                <span class="flex items-center gap-2">
                   بیشتر بدانید
                   <svg
                     class="w-5 h-5 transition-transform group-hover:translate-y-1"
@@ -325,9 +333,9 @@
 
               <a
                 href="#demo"
-                class="group px-8 py-4 glass-effect rounded-xl font-bold text-lg border border-blue-400/50 hover:border-blue-400 transition-all duration-300 hover:scale-105 hover:bg-blue-500/20"
+                class="group px-8 py-4 glass-effect rounded-xl font-bold text-lg text-blue-900 dark:text-white max-sm:text-sm border border-blue-400/50 hover:border-blue-400 transition-all duration-300 hover:scale-105 hover:bg-blue-500/20"
               >
-                <span class="flex items-center max-sm:text-sm gap-2">
+                <span class="flex items-center gap-2">
                   <svg
                     class="w-5 h-5"
                     fill="none"
@@ -352,75 +360,81 @@
               </a>
             </div>
 
-            <!-- Stats -->
+            <!-- آمار -->
             <div
-              class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto fade-in-up stagger-6"
-              data-aos="fade-left"
-              data-aos-anchor="#example-anchor"
-              data-aos-offset="500"
-              data-aos-duration="500"
+              class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
             >
-              <div class="glass-effect rounded-xl p-6 card-hover">
+              <div class="glass-effect rounded-2xl p-6 card-hover">
                 <div
-                  class="text-4xl max-sm:text-2xl font-bold text-gradient mb-2"
+                  class="text-5xl max-sm:text-3xl font-black text-gradient mb-2"
                 >
                   ۱۰۰+
                 </div>
-                <div class="text-gray-400 text-sm">پروژه موفق</div>
+                <div class="text-black dark:text-white/70 text-sm font-medium">
+                  پروژه موفق
+                </div>
               </div>
-              <div class="glass-effect rounded-xl p-6 card-hover">
+              <div class="glass-effect rounded-2xl p-6 card-hover">
                 <div
-                  class="text-4xl max-sm:text-2xl font-bold text-gradient mb-2"
+                  class="text-5xl max-sm:text-3xl font-black text-gradient mb-2"
                 >
                   ۹۹.۹%
                 </div>
-                <div class="text-gray-400 text-sm">دقت سیستم</div>
+                <div class="text-black dark:text-white/70 text-sm font-medium">
+                  دقت سیستم
+                </div>
               </div>
-              <div class="glass-effect rounded-xl p-6 card-hover">
+              <div class="glass-effect rounded-2xl p-6 card-hover">
                 <div
-                  class="text-4xl max-sm:text-2xl font-bold text-gradient mb-2"
+                  class="text-5xl max-sm:text-3xl font-black text-gradient mb-2"
                 >
                   ۲۴/۷
                 </div>
-                <div class="text-gray-400 text-sm">پشتیبانی</div>
+                <div class="text-black dark:text-white/70 text-sm font-medium">
+                  پشتیبانی
+                </div>
               </div>
-              <div class="glass-effect rounded-xl p-6 card-hover">
+              <div class="glass-effect rounded-2xl p-6 card-hover">
                 <div
-                  class="text-4xl max-sm:text-2xl font-bold text-gradient mb-2"
+                  class="text-5xl max-sm:text-3xl font-black text-gradient mb-2"
                 >
                   ۵۰+
                 </div>
-                <div class="text-gray-400 text-sm">مشتریان راضی</div>
+                <div class="text-black dark:text-white/70 text-sm font-medium">
+                  مشتریان راضی
+                </div>
               </div>
             </div>
           </div>
-
-          <!-- Scroll Indicator -->
         </div>
+
+        <!-- اندیکاتور اسکرول -->
         <div
-          class="absolute bottom-10 border-2 rounded-full flex items-center justify-center border-white p-3 w-12 h-12 cursor-pointer left-1/2 transform max-sm:bottom-6 -translate-x-1/2 animate-bounce"
-          class="absolute bottom-10 left-1/2 transform max-sm:bottom-6 -translate-x-1/2 animate-bounce"
+          class="absolute bottom-10 max-sm:bottom-6 transform m-auto "
         >
-          <svg
-            class="w-6 h-6 text-white/50"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+          <div
+            class="w-12 h-12 border-2 border-blue-400 m-auto dark:border-white rounded-full flex items-center justify-center animate-bounce hover:bg-white/10 transition-all cursor-pointer"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            ></path>
-          </svg>
+            <svg
+              class="w-6 h-6 text-blue-400 dark:text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              ></path>
+            </svg>
+          </div>
         </div>
       </div>
-      di
     </header>
     <main class="">
       <!-- Industry Solutions Section -->
-      <section id="features" class="relative py-24 bg-slate-900/50">
+      <section id="features" class="relative py-24 modal-bg">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
           <!-- Section Header -->
           <div class="max-w-3xl text-center mx-auto mb-16">
@@ -659,24 +673,6 @@
           </div>
 
           <!-- Bottom CTA -->
-          <div class="mt-16 text-center">
-            <div
-              class="inline-flex flex-col md:flex-row items-center gap-4 glass-effect rounded-2xl p-8"
-            >
-              <div class="text-right md:ml-8">
-                <h3 class="text-2xl font-bold mb-2">صنعت شما اینجا نیست؟</h3>
-                <p class="text-gray-400">
-                  ما راهکارهای سفارشی برای هر صنعتی ارائه می‌دهیم
-                </p>
-              </div>
-              <a
-                href="#contact"
-                class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl font-bold whitespace-nowrap hover:scale-105 transition-transform duration-300 hover:shadow-2xl hover:shadow-blue-500/50"
-              >
-                تماس با ما
-              </a>
-            </div>
-          </div>
         </div>
       </section>
       <section

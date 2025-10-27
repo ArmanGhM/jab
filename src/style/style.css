@@ -211,7 +211,7 @@ model-viewer {
     transform: translateX(0);
   }
 }
-.shadow-text{
+.shadow-text {
   text-shadow: 0px 0px 12px white;
 }
 /* اسکرولبار منو */
@@ -382,4 +382,412 @@ model-viewer {
     rgba(0, 102, 255, 0.4),
     rgba(255, 221, 0, 0.4)
   );
+}
+.sarcle {
+  background: radial-gradient(
+    rgba(0, 118, 244, 0.724),
+    rgba(14, 77, 137, 0.226)
+  );
+}
+
+/* گرادینت متحرک پس‌زمینه */
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* دایره‌های درخشان پس‌زمینه */
+.sarcle {
+  background: radial-gradient(
+    circle at center,
+    rgba(59, 130, 246, 0.4) 0%,
+    rgba(147, 51, 234, 0.3) 25%,
+    rgba(14, 165, 233, 0.2) 50%,
+    rgba(6, 182, 212, 0.1) 75%,
+    transparent 100%
+  );
+  filter: blur(60px);
+  animation: pulse-circle 8s ease-in-out infinite;
+}
+
+@keyframes pulse-circle {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: 0.8;
+  }
+}
+
+/* دایره اضافی در گوشه */
+.circle-blur-1 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.3),
+    rgba(147, 51, 234, 0.2),
+    transparent
+  );
+  border-radius: 50%;
+  filter: blur(80px);
+  top: -200px;
+  right: -200px;
+  animation: float-slow 20s ease-in-out infinite;
+}
+
+.circle-blur-2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(236, 72, 153, 0.3),
+    rgba(168, 85, 247, 0.2),
+    transparent
+  );
+  border-radius: 50%;
+  filter: blur(80px);
+  bottom: -150px;
+  left: -150px;
+  animation: float-slow 15s ease-in-out infinite reverse;
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(50px, -50px) scale(1.1);
+  }
+}
+
+/* ذرات متحرک */
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: linear-gradient(45deg, #60a5fa, #a78bfa);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.8);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateY(-30px) translateX(20px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-20px) translateX(-20px);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-40px) translateX(10px);
+    opacity: 0.8;
+  }
+}
+
+/* افکت شیشه‌ای */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.glass-effect:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 12px 48px rgba(59, 130, 246, 0.3);
+}
+
+/* گرادینت متن */
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    #3b82f6 0%,
+    #8b5cf6 25%,
+    #ec4899 50%,
+    #f59e0b 75%,
+    #10b981 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-text-shift 5s ease infinite;
+  text-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
+}
+
+@keyframes gradient-text-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* شادو متن برای خوانایی */
+.shadow-text {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 20px rgba(59, 130, 246, 0.6),
+    0 0 40px rgba(59, 130, 246, 0.4);
+}
+
+.shadow-text-light {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+/* انیمیشن شناور */
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* افکت هاور کارت */
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.4);
+}
+
+/* گرادینت آمار */
+.text-gradient {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.3);
+  }
+}
+
+/* Badge درخشان */
+.badge-glow {
+  animation: badge-pulse 2s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.8);
+  }
+}
+
+/* دکمه گرادینت */
+.btn-gradient {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn-gradient:hover::before {
+  opacity: 1;
+}
+
+/* افکت لایه نور */
+.light-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(59, 130, 246, 0.2) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+  animation: light-pulse 4s ease-in-out infinite;
+}
+
+@keyframes light-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+/* خط زیر متن */
+.text-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.text-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+  border-radius: 2px;
+  animation: underline-slide 3s ease-in-out infinite;
+}
+
+@keyframes underline-slide {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(10px);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .sarcle {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  .circle-blur-1,
+  .circle-blur-2 {
+    width: 250px;
+    height: 250px;
+  }
+}
+* {
+  font-family: "Vazirmatn", sans-serif;
+}
+
+.gradient-bg {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 102, 255, 0.9),
+    rgba(0, 94, 188, 0.95)
+  );
+}
+
+.dark .gradient-bg {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 102, 255, 0.4),
+    rgba(255, 221, 0, 0.4)
+  );
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark .glass-effect {
+  background: rgba(16, 25, 34, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.input-field {
+  transition: all 0.3s ease;
+}
+
+.input-field:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(17, 115, 212, 0.3);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #0066ff, #005ebc);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 102, 255, 0.4);
+}
+
+.feature-card {
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+.modal-bg {
+  background: linear-gradient(
+    135deg,
+    #0f172a 0%,
+    #1e293b 25%,
+    #0c4a6e 50%,
+    #1e3a8a 75%,
+    #1e1b4b 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  position: relative;
+  overflow: hidden;
 }
