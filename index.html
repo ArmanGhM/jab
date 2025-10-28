@@ -199,49 +199,73 @@
     <header>
       <div
         id="vanta-bg"
-        class="min-h-screen max-sm:min-h-screen flex items-center justify-center relative"
+        class="min-h-screen flex items-center justify-center relative overflow-hidden"
       >
         <!-- دایره‌های نور پس‌زمینه -->
-        <div class="circle-blur-1"></div>
-        <div class="circle-blur-2"></div>
+        <div
+          class="circle-blur-1"
+          style="width: 600px; height: 600px; top: -250px; right: -250px"
+        ></div>
+        <div
+          class="circle-blur-2"
+          style="width: 500px; height: 500px; bottom: -200px; left: -200px"
+        ></div>
+
+        <!-- لایه نور -->
         <div class="light-layer"></div>
 
-        <!-- ذرات متحرک -->
+        <!-- ذرات متحرک (12 ذره برای انیمیشن بهتر) -->
         <div
           class="particle"
-          style="left: 10%; top: 20%; animation-delay: 0s"
+          style="left: 10%; top: 15%; animation-delay: 0s"
         ></div>
         <div
           class="particle"
-          style="left: 80%; top: 40%; animation-delay: 1s"
+          style="left: 85%; top: 35%; animation-delay: 1.5s"
         ></div>
         <div
           class="particle"
-          style="left: 30%; top: 60%; animation-delay: 2s"
+          style="left: 25%; top: 55%; animation-delay: 3s"
         ></div>
         <div
           class="particle"
-          style="left: 70%; top: 80%; animation-delay: 3s"
+          style="left: 75%; top: 75%; animation-delay: 4.5s"
         ></div>
         <div
           class="particle"
-          style="left: 50%; top: 30%; animation-delay: 1.5s"
+          style="left: 50%; top: 25%; animation-delay: 2s"
         ></div>
         <div
           class="particle"
-          style="left: 20%; top: 70%; animation-delay: 2.5s"
+          style="left: 15%; top: 80%; animation-delay: 3.5s"
         ></div>
         <div
           class="particle"
-          style="left: 90%; top: 15%; animation-delay: 2.2s"
+          style="left: 90%; top: 12%; animation-delay: 1s"
         ></div>
         <div
           class="particle"
-          style="left: 15%; top: 85%; animation-delay: 3.5s"
+          style="left: 12%; top: 90%; animation-delay: 4s"
+        ></div>
+        <div
+          class="particle"
+          style="left: 60%; top: 40%; animation-delay: 2.5s"
+        ></div>
+        <div
+          class="particle"
+          style="left: 35%; top: 70%; animation-delay: 3.8s"
+        ></div>
+        <div
+          class="particle"
+          style="left: 70%; top: 20%; animation-delay: 1.2s"
+        ></div>
+        <div
+          class="particle"
+          style="left: 40%; top: 85%; animation-delay: 4.2s"
         ></div>
 
         <!-- محتوا -->
-        <div class="relative z-10 container mx-auto max-sm:mt-20 px-4 py-20">
+        <div class="relative z-10 container mx-auto px-4 py-20">
           <div class="max-w-5xl mx-auto text-center relative">
             <!-- Badge -->
             <div
@@ -251,7 +275,7 @@
                 class="w-2 h-2 bg-green-400 rounded-full animate-pulse"
               ></span>
               <span
-                class="text-sm max-sm:text-xs text-black dark:text-white font-medium"
+                class="text-sm max-sm:text-xs text-gray-800 dark:text-white font-semibold"
               >
                 پلتفرم دوقلوی دیجیتال ساتراپ ویرا سازان
               </span>
@@ -260,23 +284,24 @@
             <!-- عنوان اصلی -->
             <div class="floating">
               <h1
-                class="text-6xl max-sm:text-3xl md:text-7xl lg:text-8xl font-black mb-6"
+                class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-6"
               >
-                <span class="text-white shadow-text">آیندهٔ صنعت در</span>
-                <br />
-                <span class="gradient-text text-underline">متاورس واقعی</span>
+                <span class="text-gray-900 dark:text-white shadow-text block"
+                  >آیندهٔ صنعت در</span
+                >
+                <span class="gradient-text block mt-2">متاورس واقعی</span>
               </h1>
             </div>
 
             <!-- توضیحات -->
             <p
-              class="text-2xl max-sm:text-lg md:text-3xl font-bold text-blue-300 mb-4 max-w-3xl mx-auto leading-relaxed shadow-text"
+              class="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-300 mb-4 max-w-3xl mx-auto leading-relaxed"
             >
               به پلتفرم دوقلوی دیجیتال ساتراپ ویرا سازان خوش آمدید
             </p>
 
             <p
-              class="text-lg max-sm:text-base text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed shadow-text-light px-4"
+              class="text-base sm:text-lg text-gray-700 dark:text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed px-4"
             >
               در این سیستم، هر تجهیز، کارخانه، یا دستگاه صنعتی شما در دنیای
               دیجیتال بازآفرینی می‌شود. با ورود به حساب کاربری خود، می‌توانید
@@ -284,16 +309,11 @@
               طریق داده‌های هوشمند، تصمیم‌های دقیق‌تر بگیرید.
             </p>
 
-            <!-- دایره نور مرکزی -->
-            <div
-              class="w-[400px] max-sm:w-[250px] h-[400px] max-sm:h-[250px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full absolute -z-10 sarcle"
-            ></div>
-
             <!-- دکمه‌های اکشن -->
             <div class="flex flex-wrap justify-center gap-4 mb-16">
               <a
                 href="./login.html"
-                class="group relative px-8 py-4 btn-gradient text-white rounded-xl font-bold text-lg max-sm:text-sm overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50"
+                class="group relative px-8 py-4 btn-gradient text-white rounded-xl font-bold text-base sm:text-lg overflow-hidden"
               >
                 <span class="relative z-10 flex items-center gap-2">
                   ورود به پلتفرم
@@ -315,7 +335,7 @@
 
               <a
                 href="#features"
-                class="group px-8 py-4 glass-effect rounded-xl font-bold text-lg max-sm:text-sm text-blue-900 dark:text-white transition-all duration-300 hover:scale-105"
+                class="group px-8 py-4 glass-effect rounded-xl font-bold text-base sm:text-lg text-gray-800 dark:text-white hover:scale-105 transition-all duration-300"
               >
                 <span class="flex items-center gap-2">
                   بیشتر بدانید
@@ -337,7 +357,7 @@
 
               <a
                 href="#demo"
-                class="group px-8 py-4 glass-effect rounded-xl font-bold text-lg text-blue-900 dark:text-white max-sm:text-sm border border-blue-400/50 hover:border-blue-400 transition-all duration-300 hover:scale-105 hover:bg-blue-500/20"
+                class="group px-8 py-4 glass-effect rounded-xl font-bold text-base sm:text-lg text-gray-800 dark:text-white border-2 border-blue-400 hover:scale-105 hover:bg-blue-500/20 transition-all duration-300"
               >
                 <span class="flex items-center gap-2">
                   <svg
@@ -366,45 +386,45 @@
 
             <!-- آمار -->
             <div
-              class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
+              class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto"
             >
-              <div class="glass-effect rounded-2xl p-6 card-hover">
-                <div
-                  class="text-5xl max-sm:text-3xl font-black text-gradient mb-2"
-                >
+              <div class="glass-effect rounded-2xl p-4 sm:p-6 card-hover">
+                <div class="text-4xl sm:text-5xl font-black gradient-text mb-2">
                   ۱۰۰+
                 </div>
-                <div class="text-black dark:text-white/70 text-sm font-medium">
+                <div
+                  class="text-gray-700 dark:text-white/70 text-sm font-semibold"
+                >
                   پروژه موفق
                 </div>
               </div>
-              <div class="glass-effect rounded-2xl p-6 card-hover">
-                <div
-                  class="text-5xl max-sm:text-3xl font-black text-gradient mb-2"
-                >
+              <div class="glass-effect rounded-2xl p-4 sm:p-6 card-hover">
+                <div class="text-4xl sm:text-5xl font-black gradient-text mb-2">
                   ۹۹.۹%
                 </div>
-                <div class="text-black dark:text-white/70 text-sm font-medium">
+                <div
+                  class="text-gray-700 dark:text-white/70 text-sm font-semibold"
+                >
                   دقت سیستم
                 </div>
               </div>
-              <div class="glass-effect rounded-2xl p-6 card-hover">
-                <div
-                  class="text-5xl max-sm:text-3xl font-black text-gradient mb-2"
-                >
+              <div class="glass-effect rounded-2xl p-4 sm:p-6 card-hover">
+                <div class="text-4xl sm:text-5xl font-black gradient-text mb-2">
                   ۲۴/۷
                 </div>
-                <div class="text-black dark:text-white/70 text-sm font-medium">
+                <div
+                  class="text-gray-700 dark:text-white/70 text-sm font-semibold"
+                >
                   پشتیبانی
                 </div>
               </div>
-              <div class="glass-effect rounded-2xl p-6 card-hover">
-                <div
-                  class="text-5xl max-sm:text-3xl font-black text-gradient mb-2"
-                >
+              <div class="glass-effect rounded-2xl p-4 sm:p-6 card-hover">
+                <div class="text-4xl sm:text-5xl font-black gradient-text mb-2">
                   ۵۰+
                 </div>
-                <div class="text-black dark:text-white/70 text-sm font-medium">
+                <div
+                  class="text-gray-700 dark:text-white/70 text-sm font-semibold"
+                >
                   مشتریان راضی
                 </div>
               </div>
@@ -413,12 +433,14 @@
         </div>
 
         <!-- اندیکاتور اسکرول -->
-        <div class="absolute bottom-10 max-sm:bottom-6 transform m-auto">
+        <div
+          class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator"
+        >
           <div
-            class="w-12 h-12 border-2 border-blue-400 m-auto dark:border-white rounded-full flex items-center justify-center animate-bounce hover:bg-white/10 transition-all cursor-pointer"
+            class="w-12 h-12 border-2 border-blue-500 dark:border-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500/20 transition-all cursor-pointer"
           >
             <svg
-              class="w-6 h-6 text-blue-400 dark:text-white"
+              class="w-6 h-6 text-blue-500 dark:text-blue-400"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -1313,8 +1335,6 @@
         </div>
       </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.dots.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./src/js/home.js"></script>
     <script src="./src/js/app.js"></script>

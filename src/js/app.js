@@ -6,34 +6,6 @@ const themeDark = document.querySelector("#theme-dark");
 let vantaEffect = null;
 
 // ========== تنظیم VANTA Background ==========
-function initVanta() {
-  const isDark = document.documentElement.classList.contains("dark");
-  const bgColor = isDark ? "#0A0E1A" : "#ECF3FF";
-  const itemSmall = isDark ? "#46A6FF" : "#005CFF";
-  const itemHeader = isDark ? "#FFD34D" : "#FFB300";
-
-  if (vantaEffect) {
-    vantaEffect.destroy();
-  }
-
-  if (typeof VANTA !== "undefined" && typeof THREE !== "undefined") {
-    vantaEffect = VANTA.DOTS({
-      el: "#vanta-bg",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.0,
-      minWidth: 200.0,
-      scale: 1.0,
-      scaleMobile: 1.0,
-      color: itemSmall,
-      color2: itemHeader,
-      backgroundColor: bgColor,
-      spacing: 20.0,
-      showLines: true,
-    });
-  }
-}
 
 // ========== آپدیت استایل Nav ==========
 function updateNavStyle() {
