@@ -17,7 +17,7 @@ function updateNavStyle() {
         "linear-gradient(135deg, rgba(0, 102, 255, 0.4), rgba(255, 221, 0, 0.4))";
     } else {
       nav.style.background =
-        "linear-gradient(135deg, rgba(0, 102, 255, 0.8), rgba(0, 94, 188, 0.9))";
+        "linear-gradient(135deg, rgba(0, 20, 255, 0.8), rgba(0, 94, 188, 0.9))";
     }
     nav.style.backdropFilter = "blur(12px)";
     nav.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.2)";
@@ -26,7 +26,7 @@ function updateNavStyle() {
       nav.style.background =
         "linear-gradient(135deg, rgba(0, 102, 255, 0.3), rgba(255, 221, 0, 0.3))";
     } else {
-      nav.style.background = "#005ebc";
+      nav.style.background = "#0050bc";
     }
     nav.style.backdropFilter = "blur(0px)";
     nav.style.boxShadow = "none";
