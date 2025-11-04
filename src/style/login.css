@@ -245,20 +245,20 @@
 /* دکمه‌های outline */
 .outline-button-blue {
   border: 2px solid rgba(0, 102, 255, 0.5);
-  color: #ffffff;
+  color: #0066ff;
   background: rgba(0, 102, 255, 0.05);
   transition: all 0.3s;
 }
 
 .outline-button-blue:hover {
   background: rgba(0, 102, 255, 0.15);
-  border-color: #ffffff;
+  border-color: #0066ff;
   transform: translateY(-2px);
   box-shadow: 0 5px 20px rgba(0, 102, 255, 0.3);
 }
 
 .dark .outline-button-blue {
-  color: #ffffff;
+  color: #00d4ff;
   border-color: rgba(0, 212, 255, 0.5);
 }
 
