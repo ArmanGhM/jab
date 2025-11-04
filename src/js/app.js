@@ -2,12 +2,6 @@ const customScroll = document.querySelector(".scrollbar .scrolled");
 const nav = document.querySelector("nav");
 const themeDark = document.querySelector("#theme-dark");
 
-// متغیر سراسری برای VANTA effect
-let vantaEffect = null;
-
-// ========== تنظیم VANTA Background ==========
-
-// ========== آپدیت استایل Nav ==========
 function updateNavStyle() {
   const isDark = document.documentElement.classList.contains("dark");
 
@@ -51,8 +45,6 @@ function toggleTheme() {
 
   // استایل Nav رو آپدیت کن
   updateNavStyle();
-
- 
 }
 
 // ========== آپدیت آیکون دکمه ==========
@@ -84,8 +76,6 @@ function initializeTheme() {
   const savedTheme = localStorage.getItem("theme");
   const htmlElement = document.documentElement;
 
-  console.log("تم ذخیره شده:", savedTheme); // دیباگ
-
   if (savedTheme === "dark") {
     htmlElement.classList.add("dark");
     updateThemeIcon(true);
@@ -106,19 +96,6 @@ if (themeDark) {
 } else {
   console.error("خطا: دکمه با id='theme-dark' پیدا نشد!"); // دیباگ
 }
-
-
-
-// ========== Resize Handler ==========
-let resizeTimeout;
-window.addEventListener("resize", () => {
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(() => {
-    if (vantaEffect) {
-      initVanta();
-    }
-  }, 300);
-});
 
 // ========== Scroll Handler ==========
 window.addEventListener("scroll", () => {
@@ -174,3 +151,20 @@ document.addEventListener("mousemove", (e) => {
     particle.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
   });
 });
+window.addEventListener("load", initializeTheme);
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#1173d4",
+        "background-light": "#f6f7f8",
+        "background-dark": "#101922",
+      },
+      fontFamily: {
+        display: ["Space Grotesk", "sans-serif"],
+        vazir: ["Vazirmatn", "sans-serif"],
+      },
+    },
+  },
+};

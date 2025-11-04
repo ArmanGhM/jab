@@ -131,10 +131,7 @@ model-viewer {
   z-index: 10;
   --progress-bar-color: #1173d4;
 }
-#vanta-bg {
-  top: 0;
-  left: 0;
-}
+
 .scrolled {
   direction: ltr;
   position: absolute;
@@ -876,7 +873,7 @@ model-viewer {
 
 /* کارت گلس */
 .glass-card {
-  background: rgba(60, 0, 255, 0.03);
+  background: rgba(60, 0, 255, 0.496);
 
   border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
@@ -1133,4 +1130,8 @@ model-viewer {
     width: 300px;
     height: 300px;
   }
+}
+.dark {
+  background-color: #001f54;
+  color: white;
 }
