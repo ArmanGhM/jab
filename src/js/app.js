@@ -52,10 +52,7 @@ function toggleTheme() {
   // استایل Nav رو آپدیت کن
   updateNavStyle();
 
-  // VANTA رو بازسازی کن
-  setTimeout(() => {
-    initVanta();
-  }, 100);
+ 
 }
 
 // ========== آپدیت آیکون دکمه ==========
@@ -110,22 +107,7 @@ if (themeDark) {
   console.error("خطا: دکمه با id='theme-dark' پیدا نشد!"); // دیباگ
 }
 
-// ========== راه‌اندازی اولیه ==========
-document.addEventListener("DOMContentLoaded", () => {
-  initializeTheme();
 
-  setTimeout(() => {
-    initVanta();
-  }, 100);
-
-  if (typeof AOS !== "undefined") {
-    AOS.init({
-      duration: 1200,
-      once: true,
-      offset: 100,
-    });
-  }
-});
 
 // ========== Resize Handler ==========
 let resizeTimeout;
