@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>تماس با ما - سامانه دوقلوی دیجیتال</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/i18next@23.7.6/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.2.0/i18nextBrowserLanguageDetector.min.js"></script>
+    <style>
+      * {
+        font-family: "Vazirmatn", sans-serif;
+      }
+      body {
+        background: linear-gradient(135deg, #cad0ed 0%, #ffffff 100%);
+        color: #0f172a;
+      }
+      .dark body {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .dark .glass {
+        background: rgba(15, 23, 42, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    </style>
+  </head>
+  <body class="h-screen">
+    <!-- Navigation -->
+    <div
+      id="nav-mobile-bg"
+      class="hidden fixed w-full backdrop-blur-sm z-40 h-screen"
+    ></div>
+
+    <div
+      id="nav-mobile-bg"
+      class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-opacity duration-300 opacity-0"
+    ></div>
+
+    <nav
+      data-aos="fade-down"
+      dir="ltr"
+      class="w-full bg-[#005ebc] backdrop-blur-sm text-white fixed top-0 left-0 z-50 transition-all duration-300"
+    >
+      <!-- منوی موبایل با انیمیشن -->
+      <div
+        id="nav-item"
+        class="fixed bg-gradient dark:text-white text-black w-0 text-end backdrop-blur-3xl h-screen shadow-2xl transition-all duration-500 ease-in-out right-0 top-[84px] z-50"
+      >
+        <ul class="flex justify-start items-center flex-col gap-6 pt-10 px-6">
+          <li class="w-full">
+            <a
+              href=""
+              class="block text-lg font-semibold dark:hover:text-yellow-400 hover:text-blue-700 hover:translate-x-2 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
+            >
+              🏠 خانه
+            </a>
+          </li>
+          <li class="w-full">
+            <a
+              href=""
+              class="block text-lg font-semibold dark:hover:text-yellow-400 hover:text-blue-700 hover:translate-x-2 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
+            >
+              🎮 دمو ها
+            </a>
+          </li>
+          <li class="w-full">
+            <a
+              href="./contact.html"
+              class="block text-lg font-semibold dark:hover:text-yellow-400 hover:text-blue-700 hover:translate-x-2 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
+            >
+              📞 تماس با ما
+            </a>
+          </li>
+          <li class="w-full">
+            <a
+              href="./about.html"
+              class="block text-lg font-semibold dark:hover:text-yellow-400 hover:text-blue-700 hover:translate-x-2 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
+            >
+              ℹ️ درباره ی ما
+            </a>
+          </li>
+          <li class="w-full">
+            <div
+              class="block text-lg font-semibold dark:hover:text-yellow-400 hover:text-blue-700 hover:translate-x-2 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
+            >
+              🌐 تغییر زبان
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="w-full h-20 max-w-[1440px] max-md:flex-row-reverse flex justify-between items-center mx-auto px-4"
+      >
+        <!-- دکمه همبرگر با انیمیشن -->
+        <button
+          id="menu-hambgre"
+          class="hidden max-md:flex p-2 w-12 h-12 border-2 border-solid flex-col items-center justify-center gap-1.5 border-white rounded-2xl hover:bg-white/10 transition-all duration-300 group"
+        >
+          <div
+            class="w-7 bg-white rounded-full h-[3px] transition-all duration-300 group-hover:w-8"
+          ></div>
+          <div
+            class="w-7 bg-white rounded-full h-[3px] transition-all duration-300 group-hover:w-6"
+          ></div>
+          <div
+            class="w-7 bg-white rounded-full h-[3px] transition-all duration-300 group-hover:w-8"
+          ></div>
+        </button>
+
+        <!-- لوگو -->
+        <div class="w-[100px] h-14">
+          <img
+            src="./public/logo.png"
+            alt="logoWeb"
+            class="w-full h-full object-contain"
+          />
+        </div>
+
+        <!-- منوی دسکتاپ -->
+        <div class="max-md:hidden">
+          <ul class="flex justify-center items-center flex-row-reverse gap-6">
+            <li>
+              <a
+                href=""
+                class="hover:text-yellow-300 transition-colors duration-300 font-medium"
+              >
+                خانه
+              </a>
+            </li>
+            <li>
+              <a
+                href=""
+                class="hover:text-yellow-300 transition-colors duration-300 font-medium"
+              >
+                دمو ها
+              </a>
+            </li>
+            <li>
+              <a
+                href=""
+                class="hover:text-yellow-300 transition-colors duration-300 font-medium"
+              >
+                تماس با ما
+              </a>
+            </li>
+            <li>
+              <a
+                href=""
+                class="hover:text-yellow-300 transition-colors duration-300 font-medium"
+              >
+                درباره ی ما
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- دکمه‌های راست -->
+        <div class="flex gap-2">
+          <button
+            class="p-2 px-4 border-2 border-solid max-sm:hidden border-white rounded-md hover:bg-white hover:text-blue-600 transition-all duration-300 font-medium"
+          >
+            🌐 تغییر زبان
+          </button>
+          <button
+            id="theme-dark"
+            class="w-12 h-12 border-2 border-white border-solid flex items-center justify-center rounded-full hover:bg-white/10 hover:rotate-180 transition-all duration-500"
+          ></button>
+        </div>
+      </div>
+
+      <!-- نوار پیشرفت اسکرول -->
+      <div class="scrollbar">
+        <div class="scrolled"></div>
+      </div>
+    </nav>
+    <div class="w-full h-20"></div>
+    <div class="w-full h-20"></div>
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="fixed top-20 right-0 w-72 h-screen glass z-40 transform translate-x-full transition-transform duration-300 md:hidden"
+    >
+      <ul class="flex flex-col gap-2 p-6 text-black dark:text-white">
+        <li>
+          <a
+            href="/"
+            class="block py-3 px-4 rounded-lg hover:bg-white/10 transition-colors"
+            >🏠 خانه</a
+          >
+        </li>
+        <li>
+          <a
+            href="/demos"
+            class="block py-3 px-4 rounded-lg hover:bg-white/10 transition-colors"
+            >🎮 دمو ها</a
+          >
+        </li>
+        <li>
+          <a href="/contact" class="block py-3 px-4 rounded-lg bg-white/20"
+            >📞 تماس با ما</a
+          >
+        </li>
+        <li>
+          <a
+            href="/about"
+            class="block py-3 px-4 rounded-lg hover:bg-white/10 transition-colors"
+            >ℹ️ درباره ما</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main
+      class="flex items-center m-auto text-black dark:text-white justify-center"
+    >
+      <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-16 animate-fade-in">
+          <h1 class="text-5xl md:text-6xl font-black mb-4 drop-shadow-lg">
+            تماس با ما
+          </h1>
+          <p class="text-xl max-w-2xl mx-auto">
+            راهی آسان برای ارتباط با ما. سوالات و پیشنهادات خود را با ما در میان
+            بگذارید
+          </p>
+        </div>
+
+        <!-- Content Grid -->
+        <div class="grid lg:grid-cols-3 gap-8">
+          <!-- Contact Form -->
+          <div class="lg:col-span-2 glass rounded-3xl p-8  shadow-2xl">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+              <span class="material-symbols-outlined text-3xl">send</span>
+              ارسال پیام
+            </h2>
+            <form class="space-y-6">
+              <div class="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium mb-2"
+                    >نام و نام خانوادگی</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="احمد محمدی"
+                    class="w-full px-4 py-3 rounded-xl glass placeholder-black/75 focus:outline-none focus:ring-2 focus:ring-yellow-300 transition-all"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium mb-2">ایمیل</label>
+                  <input
+                    type="email"
+                    placeholder="example@email.com"
+                    class="w-full px-4 py-3 rounded-xl glass placeholder-black/75  focus:outline-none focus:ring-2 focus:ring-yellow-300 transition-all"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium mb-2">موضوع</label>
+                <input
+                  type="text"
+                  placeholder="موضوع پیام شما"
+                  class="w-full px-4 py-3 rounded-xl glass placeholder-black/75  focus:outline-none focus:ring-2 focus:ring-yellow-300 transition-all"
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium mb-2">متن پیام</label>
+                <textarea
+                  rows="6"
+                  placeholder="پیام خود را اینجا بنویسید..."
+                  class="w-full px-4 py-3 rounded-xl glass placeholder-black/75  focus:outline-none focus:ring-2 focus:ring-yellow-300 transition-all resize-none"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 font-bold rounded-xl hover:scale-105 transition-transform shadow-lg hover:shadow-2xl"
+              >
+                ارسال پیام
+              </button>
+            </form>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="space-y-6">
+            <!-- Contact Cards -->
+            <div class="glass rounded-3xl p-6 shadow-2xl">
+              <h3 class="text-xl font-bold mb-6">اطلاعات تماس</h3>
+              <div class="space-y-5">
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-gray-900 flex-shrink-0"
+                  >
+                    <span class="material-symbols-outlined">call</span>
+                  </div>
+                  <div>
+                    <p class="text-sm mb-1">تلفن</p>
+                    <a
+                      href="tel:+982112345678"
+                      class="font-medium hover:text-yellow-300 transition-colors"
+                      >021-1234-5678</a
+                    >
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-gray-900 flex-shrink-0"
+                  >
+                    <span class="material-symbols-outlined">mail</span>
+                  </div>
+                  <div>
+                    <p class="text-sm mb-1">ایمیل</p>
+                    <a
+                      href="mailto:support@digitaltwin.com"
+                      class="font-medium hover:text-yellow-300 transition-colors break-all"
+                      >support@digitaltwin.com</a
+                    >
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-gray-900 flex-shrink-0"
+                  >
+                    <span class="material-symbols-outlined">location_on</span>
+                  </div>
+                  <div>
+                    <p class="text-sm mb-1">آدرس</p>
+                    <p class="font-medium leading-relaxed">
+                      تهران، خیابان ولیعصر، برج فناوری، طبقه دهم
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Map -->
+            <div class="glass rounded-3xl overflow-hidden shadow-2xl h-64">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207371.2256115756!2d51.20904384999999!3d35.699765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e00491ff3dcd9%3A0xf0b3697c567024bc!2sTehran%2C%20Iran!5e0!3m2!1sen!2s!4v1234567890"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-slate-500 border-t w-full absolute bottom-0 border-white/10 py-8"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-4 text-white/80"
+        >
+          <p class="text-sm">
+            © 1403 سامانه دوقلوی دیجیتال. تمامی حقوق محفوظ است.
+          </p>
+          <div class="flex gap-6 text-sm">
+            <a href="#" class="hover:text-yellow-300 transition-colors"
+              >حریم خصوصی</a
+            >
+            <a href="#" class="hover:text-yellow-300 transition-colors"
+              >شرایط استفاده</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./src/js/home.js"></script>
+    <script src="./src/js/app.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    </script>
+  </body>
+</html>
