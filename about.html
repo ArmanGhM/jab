@@ -1,469 +1,748 @@
 <!DOCTYPE html>
-
-<html class="dark" dir="rtl" lang="fa">
+<html dir="rtl" lang="fa">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>درباره ما - سامانه دوقلوی دیجیتال</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <link rel="stylesheet" href="./src/style/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next@23.7.6/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.2.0/i18nextBrowserLanguageDetector.min.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
+    <style>
+      * {
+        font-family: "Vazirmatn", sans-serif;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes scaleIn {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .animate-fade-up {
+        animation: fadeInUp 0.6s ease-out forwards;
+      }
+      .animate-fade-down {
+        animation: fadeInDown 0.6s ease-out forwards;
+      }
+      .animate-scale {
+        animation: scaleIn 0.5s ease-out forwards;
+      }
+      .animate-slide-right {
+        animation: slideInRight 0.6s ease-out forwards;
+      }
+
+      .delay-100 {
+        animation-delay: 0.1s;
+        opacity: 0;
+      }
+      .delay-200 {
+        animation-delay: 0.2s;
+        opacity: 0;
+      }
+      .delay-300 {
+        animation-delay: 0.3s;
+        opacity: 0;
+      }
+      .delay-400 {
+        animation-delay: 0.4s;
+        opacity: 0;
+      }
+      .delay-500 {
+        animation-delay: 0.5s;
+        opacity: 0;
+      }
+      .delay-600 {
+        animation-delay: 0.6s;
+        opacity: 0;
+      }
+
+      .gradient-border {
+        position: relative;
+        background: linear-gradient(
+          to bottom right,
+          rgba(103, 126, 234, 0.1),
+          rgba(118, 75, 162, 0.1)
+        );
+        border: 2px solid transparent;
+        border-radius: 1rem;
+      }
+
+      .gradient-border::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 1rem;
+        padding: 2px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .gradient-border:hover::before {
+        opacity: 1;
+      }
+
+      .floating {
+        animation: floating 3s ease-in-out infinite;
+      }
+
+      @keyframes floating {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+    </style>
     <script>
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
             colors: {
-              primary: "#135bec",
-              "background-light": "#f6f6f8",
-              "background-dark": "#101622",
-            },
-            fontFamily: {
-              display: ["Space Grotesk", "Noto Sans", "sans-serif"],
-            },
-            borderRadius: {
-              DEFAULT: "0.25rem",
-              lg: "0.5rem",
-              xl: "0.75rem",
-              full: "9999px",
+              primary: "#667eea",
+              secondary: "#764ba2",
             },
           },
         },
       };
     </script>
-    <style>
-      body {
-        direction: rtl;
-      }
-    </style>
-    <link href="./src/style/output.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./src/style/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <script src="https://cdn.tailwindcss.com?plugins=container-queries"></script>
   </head>
-  <body class="font-display">
-    <div
-      class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden"
-    >
+  <body
+    class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-slate-900"
+  >
+    <div class="relative flex min-h-screen w-full flex-col">
       <div class="layout-container flex h-full grow flex-col">
-        <div
-          class="px-4 sm:px-8 md:px-20 lg:px-40 flex flex-1 justify-center py-5"
-        >
+        <div class="flex flex-1 justify-center">
           <div
-            class="layout-content-container flex flex-col max-w-[960px] flex-1"
+            class="layout-content-container flex flex-col max-w-[1200px] w-full flex-1"
           >
-            <!-- TopNavBar -->
-            <header
-              class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-b-[#232f48] px-4 md:px-10 py-3"
+            <!-- Navigation - بدون تغییر -->
+            <div
+              id="nav-mobile-bg"
+              class="hidden fixed w-full backdrop-blur-sm z-40 h-screen"
+            ></div>
+
+            <div
+              id="nav-mobile-bg"
+              class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-opacity duration-300 opacity-0"
+            ></div>
+
+            <nav
+              data-aos="fade-down"
+              dir="ltr"
+              class="w-full bg-[#005ebc] backdrop-blur-sm text-white fixed top-0 left-0 z-50 transition-all duration-300"
             >
-              <div class="flex items-center gap-4 text-black dark:text-white">
-                <div class="size-4 text-primary">
-                  <svg
-                    fill="none"
-                    viewbox="0 0 48 48"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      clip-rule="evenodd"
-                      d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z"
-                      fill="currentColor"
-                      fill-rule="evenodd"
-                    ></path>
-                  </svg>
-                </div>
-                <h2
-                  class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]"
+              <!-- منوی موبایل با انیمیشن -->
+              <div
+                id="nav-item"
+                class="fixed bg-gradient dark:text-white text-black w-0 text-end backdrop-blur-3xl h-screen shadow-2xl transition-all duration-500 ease-in-out right-0 top-[84px] z-50"
+              >
+                <ul
+                  class="flex justify-start items-center flex-col gap-6 pt-10 px-6"
                 >
-                  سامانه دوقلوی دیجیتال
-                </h2>
+                  <li class="w-full">
+                    <a
+                      href="./index.html"
+                      class="block text-lg font-semibold dark:hover:text-yellow-400 hover:text-blue-700 hover:translate-x-2 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
+                    >
+                      🏠 خانه
+                    </a>
+                  </li>
+                  <li class="w-full">
+                    <a
+                      href=""
+                      class="block text-lg font-semibold dark:hover:text-yellow-400 hover:text-blue-700 hover:translate-x-2 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
+                    >
+                      🎮 دمو ها
+                    </a>
+                  </li>
+                  <li class="w-full">
+                    <a
+                      href="./contact.html"
+                      class="block text-lg font-semibold dark:hover:text-yellow-400 hover:text-blue-700 hover:translate-x-2 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
+                    >
+                      📞 تماس با ما
+                    </a>
+                  </li>
+                  <li class="w-full">
+                    <a
+                      href="./about.html"
+                      class="block text-lg font-semibold dark:hover:text-yellow-400 hover:text-blue-700 hover:translate-x-2 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
+                    >
+                      ℹ️ درباره ی ما
+                    </a>
+                  </li>
+                  <li class="w-full">
+                    <div
+                      class="block text-lg font-semibold dark:hover:text-yellow-400 hover:text-blue-700 hover:translate-x-2 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
+                    >
+                      🌐 تغییر زبان
+                    </div>
+                  </li>
+                </ul>
               </div>
-              <div class="hidden md:flex flex-1 justify-end gap-8">
-                <div class="flex items-center gap-9">
-                  <a
-                    class="text-gray-600 dark:text-gray-300 text-sm font-medium leading-normal"
-                    href="#"
-                    >صفحه اصلی</a
-                  >
-                  <a
-                    class="text-gray-600 dark:text-gray-300 text-sm font-medium leading-normal"
-                    href="#"
-                    >تماس با ما</a
-                  >
+
+              <div
+                class="w-full h-20 max-w-[1440px] max-md:flex-row-reverse flex justify-between items-center mx-auto px-4"
+              >
+                <!-- دکمه همبرگر با انیمیشن -->
+                <button
+                  id="menu-hambgre"
+                  class="hidden max-md:flex p-2 w-12 h-12 border-2 border-solid flex-col items-center justify-center gap-1.5 border-white rounded-2xl hover:bg-white/10 transition-all duration-300 group"
+                >
+                  <div
+                    class="w-7 bg-white rounded-full h-[3px] transition-all duration-300 group-hover:w-8"
+                  ></div>
+                  <div
+                    class="w-7 bg-white rounded-full h-[3px] transition-all duration-300 group-hover:w-6"
+                  ></div>
+                  <div
+                    class="w-7 bg-white rounded-full h-[3px] transition-all duration-300 group-hover:w-8"
+                  ></div>
+                </button>
+
+                <!-- لوگو -->
+                <div class="w-[100px] h-14">
+                  <img
+                    src="./public/logo.png"
+                    alt="logoWeb"
+                    class="w-full h-full object-contain"
+                  />
                 </div>
+
+                <!-- منوی دسکتاپ -->
+                <div class="max-md:hidden">
+                  <ul
+                    class="flex justify-center items-center flex-row-reverse gap-6"
+                  >
+                    <li>
+                      <a
+                        href="./index.html"
+                        class="hover:text-yellow-300 transition-colors duration-300 font-medium"
+                      >
+                        خانه
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href=""
+                        class="hover:text-yellow-300 transition-colors duration-300 font-medium"
+                      >
+                        دمو ها
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="./contact.html"
+                        class="hover:text-yellow-300 transition-colors duration-300 font-medium"
+                      >
+                        تماس با ما
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="./about.html"
+                        class="hover:text-yellow-300 transition-colors duration-300 font-medium"
+                      >
+                        درباره ی ما
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- دکمه‌های راست -->
                 <div class="flex gap-2">
                   <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]"
+                    class="p-2 px-4 border-2 border-solid max-sm:hidden border-white rounded-md hover:bg-white hover:text-blue-600 transition-all duration-300 font-medium"
                   >
-                    <span class="truncate">ثبت‌نام</span>
+                    🌐 تغییر زبان
                   </button>
                   <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gray-200 dark:bg-[#232f48] text-black dark:text-white text-sm font-bold leading-normal tracking-[0.015em]"
-                  >
-                    <span class="truncate">ورود</span>
-                  </button>
+                    id="theme-dark"
+                    class="w-12 h-12 border-2 border-white border-solid flex items-center justify-center rounded-full hover:bg-white/10 hover:rotate-180 transition-all duration-500"
+                  ></button>
                 </div>
               </div>
-              <div class="md:hidden">
-                <button class="text-black dark:text-white">
-                  <span class="material-symbols-outlined">menu</span>
-                </button>
+
+              <!-- نوار پیشرفت اسکرول -->
+              <div class="scrollbar">
+                <div class="scrolled"></div>
               </div>
-            </header>
-            <main>
-              <!-- HeroSection -->
-              <div class="@container mt-5">
-                <div class="@[480px]:p-4">
+            </nav>
+
+            <main class="mt-20 px-4 sm:px-6 lg:px-8 pb-16">
+              <!-- Hero Section -->
+              <div class="mt-8 mb-16 animate-fade-down">
+                <div
+                  class="relative rounded-3xl overflow-hidden shadow-2xl group"
+                >
                   <div
-                    class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center p-4"
-                    data-alt="Abstract digital network connections"
+                    class="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:scale-105 transition-transform duration-700"
+                  ></div>
+                  <div
+                    class="relative min-h-[400px] bg-gradient-to-br from-slate-900/90 to-slate-800/90 flex flex-col items-center justify-center p-8 md:p-12"
                     style="
                       background-image: linear-gradient(
-                          rgba(16, 22, 34, 0.6) 0%,
-                          rgba(16, 22, 34, 0.8) 100%
+                          rgba(16, 22, 34, 0.85),
+                          rgba(16, 22, 34, 0.9)
                         ),
                         url('https://lh3.googleusercontent.com/aida-public/AB6AXuA6bKvFkKxn8Ny0dveCwiB0mKdy7WCs-zfMBQefKx3E7jMChbK8DkYdHjM1Hbe-113AzN2Gb2qIwMkGw4HEebv7XqgKqNlIKGAqUpGdb1EcKwRetdZGsI3aaH5PD0UvDRpOTrIJVbAo9p1rNIqRGOK73He7BoqNnO487VgE_xihpt67wI53CWuaolLHHH0nrnBdmwqK0PXkW5fB_DhlNjPq9U1wDR0VWsUW50xz5MvvitU8Obo7zAJdGCuxLTd_-ZkgTUQo2fWtt92w');
+                      background-size: cover;
+                      background-position: center;
                     "
                   >
-                    <div class="flex flex-col gap-2 text-center">
-                      <h1
-                        class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
-                      >
-                        آینده‌نگری از طریق دوقلوهای دیجیتال
-                      </h1>
-                      <h2
-                        class="text-gray-200 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal max-w-2xl mx-auto"
-                      >
-                        با سامانه یکپارچه ما، دنیای فیزیکی و دیجیتال را به هم
-                        متصل کرده و مدیریت هوشمند دارایی‌های خود را برای
-                        تصمیم‌گیری‌های بهتر و بهینه‌سازی فرآیندها تجربه کنید.
-                      </h2>
-                    </div>
+                    <h1
+                      class="text-white text-4xl md:text-5xl lg:text-6xl font-black text-center mb-4 leading-tight drop-shadow-2xl"
+                    >
+                      آینده‌نگری از طریق دوقلوهای دیجیتال
+                    </h1>
+                    <p
+                      class="text-gray-200 text-base md:text-lg text-center max-w-3xl leading-relaxed"
+                    >
+                      با سامانه یکپارچه ما، دنیای فیزیکی و دیجیتال را به هم متصل
+                      کرده و مدیریت هوشمند دارایی‌های خود را برای تصمیم‌گیری‌های
+                      بهتر و بهینه‌سازی فرآیندها تجربه کنید
+                    </p>
                   </div>
                 </div>
               </div>
-              <!-- SectionHeader - Values -->
-              <h2
-                class="text-black dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-10"
-              >
-                ماموریت، چشم‌انداز و ارزش‌های ما
-              </h2>
-              <!-- TextGrid - Values -->
-              <div
-                class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-3 p-4"
-              >
-                <div
-                  class="flex flex-1 gap-3 rounded-lg border border-gray-200 dark:border-[#324467] bg-white dark:bg-[#192233] p-4 flex-col"
+
+              <!-- Values Section -->
+              <div class="mb-16">
+                <h2
+                  class="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-8 text-center animate-fade-up"
                 >
-                  <div class="text-primary">
-                    <span
-                      class="material-symbols-outlined"
-                      style="font-size: 28px"
-                      >lightbulb</span
+                  ماموریت، چشم‌انداز و ارزش‌های ما
+                </h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                  <div
+                    class="gradient-border bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-scale delay-100"
+                  >
+                    <div
+                      class="w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center mb-4 floating"
                     >
-                  </div>
-                  <div class="flex flex-col gap-1">
+                      <span
+                        class="material-symbols-outlined text-3xl text-white"
+                        >lightbulb</span
+                      >
+                    </div>
                     <h3
-                      class="text-black dark:text-white text-base font-bold leading-tight"
+                      class="text-xl font-bold text-gray-900 dark:text-white mb-3"
                     >
                       نوآوری
                     </h3>
-                    <p
-                      class="text-gray-500 dark:text-[#92a4c9] text-sm font-normal leading-normal"
-                    >
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
                       ما با بهره‌گیری از آخرین فناوری‌ها، راهکارهای خلاقانه برای
-                      چالش‌های پیچیده ارائه می‌دهیم.
+                      چالش‌های پیچیده ارائه می‌دهیم
                     </p>
                   </div>
-                </div>
-                <div
-                  class="flex flex-1 gap-3 rounded-lg border border-gray-200 dark:border-[#324467] bg-white dark:bg-[#192233] p-4 flex-col"
-                >
-                  <div class="text-primary">
-                    <span
-                      class="material-symbols-outlined"
-                      style="font-size: 28px"
-                      >shield</span
+
+                  <div
+                    class="gradient-border bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-scale delay-200"
+                  >
+                    <div
+                      class="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-400 to-cyan-500 flex items-center justify-center mb-4 floating"
+                      style="animation-delay: 0.5s"
                     >
-                  </div>
-                  <div class="flex flex-col gap-1">
+                      <span
+                        class="material-symbols-outlined text-3xl text-white"
+                        >shield</span
+                      >
+                    </div>
                     <h3
-                      class="text-black dark:text-white text-base font-bold leading-tight"
+                      class="text-xl font-bold text-gray-900 dark:text-white mb-3"
                     >
                       امنیت
                     </h3>
-                    <p
-                      class="text-gray-500 dark:text-[#92a4c9] text-sm font-normal leading-normal"
-                    >
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
                       امنیت داده‌ها و حریم خصوصی کاربران اولویت اصلی ما در تمام
-                      مراحل توسعه و اجراست.
+                      مراحل توسعه و اجراست
                     </p>
                   </div>
-                </div>
-                <div
-                  class="flex flex-1 gap-3 rounded-lg border border-gray-200 dark:border-[#324467] bg-white dark:bg-[#192233] p-4 flex-col"
-                >
-                  <div class="text-primary">
-                    <span
-                      class="material-symbols-outlined"
-                      style="font-size: 28px"
-                      >target</span
+
+                  <div
+                    class="gradient-border bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-scale delay-300"
+                  >
+                    <div
+                      class="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center mb-4 floating"
+                      style="animation-delay: 1s"
                     >
-                  </div>
-                  <div class="flex flex-col gap-1">
+                      <span
+                        class="material-symbols-outlined text-3xl text-white"
+                        >target</span
+                      >
+                    </div>
                     <h3
-                      class="text-black dark:text-white text-base font-bold leading-tight"
+                      class="text-xl font-bold text-gray-900 dark:text-white mb-3"
                     >
                       دقت
                     </h3>
-                    <p
-                      class="text-gray-500 dark:text-[#92a4c9] text-sm font-normal leading-normal"
-                    >
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
                       دقت بی‌نظیر در شبیه‌سازی و تحلیل داده‌ها، اساس
-                      تصمیم‌گیری‌های هوشمندانه مشتریان ماست.
+                      تصمیم‌گیری‌های هوشمندانه مشتریان ماست
                     </p>
                   </div>
                 </div>
               </div>
-              <!-- SectionHeader - Story -->
-              <h2
-                class="text-black dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-10"
-              >
-                داستان ما: از ایده تا واقعیت
-              </h2>
+
               <!-- Timeline Section -->
-              <div class="p-4">
-                <div
-                  class="relative border-r-2 border-gray-200 dark:border-primary/30 mr-4"
+              <div class="mb-16">
+                <h2
+                  class="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-8 text-center animate-fade-up delay-100"
                 >
-                  <!-- Timeline Item 1 -->
-                  <div class="mb-8 mr-[-9px]">
-                    <div
-                      class="absolute w-4 h-4 rounded-full bg-primary border-4 border-background-light dark:border-background-dark"
-                    ></div>
-                    <div class="pr-8">
-                      <span class="text-sm font-semibold text-primary"
-                        >۱۳۹۹ - شکل‌گیری ایده</span
+                  داستان ما: از ایده تا واقعیت
+                </h2>
+                <div class="relative max-w-4xl mx-auto">
+                  <div
+                    class="absolute right-8 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-secondary to-primary"
+                  ></div>
+
+                  <div class="space-y-12 pr-20">
+                    <div class="relative animate-slide-right delay-200">
+                      <div
+                        class="absolute -right-[2.15rem] top-2 w-6 h-6 rounded-full bg-gradient-to-br from-primary to-secondary border-4 border-white dark:border-slate-900 shadow-lg"
+                      ></div>
+                      <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
                       >
-                      <h3
-                        class="text-lg font-bold text-black dark:text-white mt-1"
-                      >
-                        جرقه اولیه
-                      </h3>
-                      <p
-                        class="text-gray-500 dark:text-gray-400 mt-2 text-sm leading-relaxed"
-                      >
-                        ایده اولیه سامانه دوقلوی دیجیتال با هدف بهینه‌سازی صنایع
-                        بزرگ و مدیریت هوشمند دارایی‌ها شکل گرفت.
-                      </p>
+                        <span
+                          class="inline-block px-4 py-1 bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold rounded-full mb-3"
+                          >۱۳۹۹ - شکل‌گیری ایده</span
+                        >
+                        <h3
+                          class="text-2xl font-bold text-gray-900 dark:text-white mb-2"
+                        >
+                          جرقه اولیه
+                        </h3>
+                        <p
+                          class="text-gray-600 dark:text-gray-300 leading-relaxed"
+                        >
+                          ایده اولیه سامانه دوقلوی دیجیتال با هدف بهینه‌سازی
+                          صنایع بزرگ و مدیریت هوشمند دارایی‌ها شکل گرفت
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <!-- Timeline Item 2 -->
-                  <div class="mb-8 mr-[-9px]">
-                    <div
-                      class="absolute w-4 h-4 rounded-full bg-primary border-4 border-background-light dark:border-background-dark"
-                    ></div>
-                    <div class="pr-8">
-                      <span class="text-sm font-semibold text-primary"
-                        >۱۴۰۰ - تشکیل تیم و تحقیق</span
+
+                    <div class="relative animate-slide-right delay-300">
+                      <div
+                        class="absolute -right-[2.15rem] top-2 w-6 h-6 rounded-full bg-gradient-to-br from-primary to-secondary border-4 border-white dark:border-slate-900 shadow-lg"
+                      ></div>
+                      <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
                       >
-                      <h3
-                        class="text-lg font-bold text-black dark:text-white mt-1"
-                      >
-                        تیم متخصص
-                      </h3>
-                      <p
-                        class="text-gray-500 dark:text-gray-400 mt-2 text-sm leading-relaxed"
-                      >
-                        تیمی از متخصصان حوزه نرم‌افزار، هوش مصنوعی و مهندسی
-                        صنایع گرد هم آمدند تا روی تحقیق و توسعه پلتفرم کار کنند.
-                      </p>
+                        <span
+                          class="inline-block px-4 py-1 bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold rounded-full mb-3"
+                          >۱۴۰۰ - تشکیل تیم و تحقیق</span
+                        >
+                        <h3
+                          class="text-2xl font-bold text-gray-900 dark:text-white mb-2"
+                        >
+                          تیم متخصص
+                        </h3>
+                        <p
+                          class="text-gray-600 dark:text-gray-300 leading-relaxed"
+                        >
+                          تیمی از متخصصان حوزه نرم‌افزار، هوش مصنوعی و مهندسی
+                          صنایع گرد هم آمدند تا روی تحقیق و توسعه پلتفرم کار
+                          کنند
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <!-- Timeline Item 3 -->
-                  <div class="mb-8 mr-[-9px]">
-                    <div
-                      class="absolute w-4 h-4 rounded-full bg-primary border-4 border-background-light dark:border-background-dark"
-                    ></div>
-                    <div class="pr-8">
-                      <span class="text-sm font-semibold text-primary"
-                        >۱۴۰۱ - اولین نسخه آزمایشی</span
+
+                    <div class="relative animate-slide-right delay-400">
+                      <div
+                        class="absolute -right-[2.15rem] top-2 w-6 h-6 rounded-full bg-gradient-to-br from-primary to-secondary border-4 border-white dark:border-slate-900 shadow-lg"
+                      ></div>
+                      <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
                       >
-                      <h3
-                        class="text-lg font-bold text-black dark:text-white mt-1"
-                      >
-                        تولد محصول
-                      </h3>
-                      <p
-                        class="text-gray-500 dark:text-gray-400 mt-2 text-sm leading-relaxed"
-                      >
-                        نسخه اولیه (MVP) سامانه با موفقیت توسعه یافت و اولین
-                        پروژه‌های آزمایشی با شرکای تجاری کلید خورد.
-                      </p>
+                        <span
+                          class="inline-block px-4 py-1 bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold rounded-full mb-3"
+                          >۱۴۰۱ - اولین نسخه آزمایشی</span
+                        >
+                        <h3
+                          class="text-2xl font-bold text-gray-900 dark:text-white mb-2"
+                        >
+                          تولد محصول
+                        </h3>
+                        <p
+                          class="text-gray-600 dark:text-gray-300 leading-relaxed"
+                        >
+                          نسخه اولیه (MVP) سامانه با موفقیت توسعه یافت و اولین
+                          پروژه‌های آزمایشی با شرکای تجاری کلید خورد
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <!-- Timeline Item 4 -->
-                  <div class="mr-[-9px]">
-                    <div
-                      class="absolute w-4 h-4 rounded-full bg-primary border-4 border-background-light dark:border-background-dark"
-                    ></div>
-                    <div class="pr-8">
-                      <span class="text-sm font-semibold text-primary"
-                        >۱۴۰۲ - عرضه عمومی</span
+
+                    <div class="relative animate-slide-right delay-500">
+                      <div
+                        class="absolute -right-[2.15rem] top-2 w-6 h-6 rounded-full bg-gradient-to-br from-primary to-secondary border-4 border-white dark:border-slate-900 shadow-lg"
+                      ></div>
+                      <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
                       >
-                      <h3
-                        class="text-lg font-bold text-black dark:text-white mt-1"
-                      >
-                        نگاه به آینده
-                      </h3>
-                      <p
-                        class="text-gray-500 dark:text-gray-400 mt-2 text-sm leading-relaxed"
-                      >
-                        سامانه به صورت عمومی عرضه شد و ما همچنان به توسعه
-                        ویژگی‌های جدید و گسترش بازار ادامه می‌دهیم.
-                      </p>
+                        <span
+                          class="inline-block px-4 py-1 bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold rounded-full mb-3"
+                          >۱۴۰۲ - عرضه عمومی</span
+                        >
+                        <h3
+                          class="text-2xl font-bold text-gray-900 dark:text-white mb-2"
+                        >
+                          نگاه به آینده
+                        </h3>
+                        <p
+                          class="text-gray-600 dark:text-gray-300 leading-relaxed"
+                        >
+                          سامانه به صورت عمومی عرضه شد و ما همچنان به توسعه
+                          ویژگی‌های جدید و گسترش بازار ادامه می‌دهیم
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+
               <!-- Team Section -->
-              <h2
-                class="text-black dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-10 text-center"
-              >
-                تیم متخصص ما
-              </h2>
-              <p class="text-center text-gray-500 dark:text-gray-400 px-4 mb-6">
-                با بنیان‌گذاران و مدیران کلیدی ما که با تخصص و تجربه خود این
-                سامانه را هدایت می‌کنند، آشنا شوید.
-              </p>
-              <div
-                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4"
-              >
-                <!-- Team Member 1 -->
-                <div
-                  class="bg-white dark:bg-[#192233] rounded-lg p-6 text-center border border-gray-200 dark:border-[#324467]"
+              <div class="mb-16">
+                <h2
+                  class="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-4 text-center animate-fade-up delay-100"
                 >
-                  <img
-                    class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-                    data-alt="Profile picture of Reza Ahmadi"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwPecYEzfRem6CoFn3sX3JTkklzQ4iEgWEiEGIYw2FAXFmdx1sIBGZRjYXFYNUYPDOrzJkexyXDshaTJ0MP_iZ_RO1m92BWGjrzWwituqxZxiuPW2n44j898whwwWyy42jP88ZelUJ8gdpaA5BuRwL3XxWXpeACgrn9ZTsqIbgO6XZDqjnBkOpyraKag8I0zATvUDnHrW1c9UFOl2f8r-50lS6L5dygmelp_faDnj3mYE2sHaPUcxe1nqtI3kILJr7xMihK2uKI4c3"
-                  />
-                  <h3 class="text-lg font-bold text-black dark:text-white">
-                    رضا احمدی
-                  </h3>
-                  <p class="text-primary text-sm">مدیرعامل و بنیان‌گذار</p>
-                  <p class="text-gray-500 dark:text-gray-400 mt-2 text-xs">
-                    متخصص هوش مصنوعی با بیش از ۱۰ سال سابقه در صنعت نرم‌افزار.
-                  </p>
-                </div>
-                <!-- Team Member 2 -->
-                <div
-                  class="bg-white dark:bg-[#192233] rounded-lg p-6 text-center border border-gray-200 dark:border-[#324467]"
+                  تیم متخصص ما
+                </h2>
+                <p
+                  class="text-center text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto animate-fade-up delay-200"
                 >
-                  <img
-                    class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-                    data-alt="Profile picture of Maryam Mohammadi"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe1LjrBYKVKFjBVXO_rz02KlV2KNR6iO2J0oPrCTR2umIfEW6QJYyjqFfUOaa_cv0wFkpSylr9awelgNrJh7V-xX0Mq_Wnm_yVBdmnRV3MLVz5taDloIJY4pYvlMjwBcQXA7_C6xeDEjWOHRQJ0t36whjVPjeKoRtnWJ_929G5q7AyYGcnompHgCgavkTeuahuFLeTPmsgAUHQg6ciCfm9zlaHGqjeDqHQ5l7okzyloySC_qtYEQByhmX43Bm0uP3l8pBy447LCIHr"
-                  />
-                  <h3 class="text-lg font-bold text-black dark:text-white">
-                    مریم محمدی
-                  </h3>
-                  <p class="text-primary text-sm">مدیر فنی</p>
-                  <p class="text-gray-500 dark:text-gray-400 mt-2 text-xs">
-                    معمار ارشد نرم‌افزار و متخصص در سیستم‌های توزیع‌شده و
-                    کلان‌داده.
-                  </p>
-                </div>
-                <!-- Team Member 3 -->
-                <div
-                  class="bg-white dark:bg-[#192233] rounded-lg p-6 text-center border border-gray-200 dark:border-[#324467]"
-                >
-                  <img
-                    class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-                    data-alt="Profile picture of Ali Karimi"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5nO3Bwz0vAYCJmDwAQi3RdvLu-Fy9R4vBPRwH71pMs-DC6nt-DzIgldavacXoEL8zufI4F7j4aweEfq3DsxAkjsF-Vkoi0Bk5QYZjzf_Oo-bqRvZTLQmaWSEM8Otkjn9lmn2PqrgB8j0k593SiDO58NnjyVJy_V4agpO71zq0GGhDcpXKI0297k0iHvdIOsydiYU9_aGuybmdb5FUIdfodWOjoq0RE0vAyJ9v12T2bHOug8093HcTnm8z640czUQTivj7D5_DjaHZ"
-                  />
-                  <h3 class="text-lg font-bold text-black dark:text-white">
-                    علی کریمی
-                  </h3>
-                  <p class="text-primary text-sm">مدیر محصول</p>
-                  <p class="text-gray-500 dark:text-gray-400 mt-2 text-xs">
-                    استراتژیست محصول با تمرکز بر تجربه کاربری و نیازهای بازار.
-                  </p>
+                  با بنیان‌گذاران و مدیران کلیدی ما که با تخصص و تجربه خود این
+                  سامانه را هدایت می‌کنند، آشنا شوید
+                </p>
+                <div class="grid md:grid-cols-3 gap-8">
+                  <div
+                    class="bg-white dark:bg-slate-800 rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-scale delay-300"
+                  >
+                    <div class="relative inline-block mb-6">
+                      <img
+                        class="w-32 h-32 rounded-full object-cover ring-4 ring-primary/20"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwPecYEzfRem6CoFn3sX3JTkklzQ4iEgWEiEGIYw2FAXFmdx1sIBGZRjYXFYNUYPDOrzJkexyXDshaTJ0MP_iZ_RO1m92BWGjrzWwituqxZxiuPW2n44j898whwwWyy42jP88ZelUJ8gdpaA5BuRwL3XxWXpeACgrn9ZTsqIbgO6XZDqjnBkOpyraKag8I0zATvUDnHrW1c9UFOl2f8r-50lS6L5dygmelp_faDnj3mYE2sHaPUcxe1nqtI3kILJr7xMihK2uKI4c3"
+                      />
+                      <div
+                        class="absolute bottom-0 right-0 w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center border-4 border-white dark:border-slate-800"
+                      >
+                        <span
+                          class="material-symbols-outlined text-white text-lg"
+                          >verified</span
+                        >
+                      </div>
+                    </div>
+                    <h3
+                      class="text-xl font-bold text-gray-900 dark:text-white mb-2"
+                    >
+                      رضا احمدی
+                    </h3>
+                    <p class="text-primary font-semibold mb-3">
+                      مدیرعامل و بنیان‌گذار
+                    </p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                      متخصص هوش مصنوعی با بیش از ۱۰ سال سابقه در صنعت نرم‌افزار
+                    </p>
+                  </div>
+
+                  <div
+                    class="bg-white dark:bg-slate-800 rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-scale delay-400"
+                  >
+                    <div class="relative inline-block mb-6">
+                      <img
+                        class="w-32 h-32 rounded-full object-cover ring-4 ring-secondary/20"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe1LjrBYKVKFjBVXO_rz02KlV2KNR6iO2J0oPrCTR2umIfEW6QJYyjqFfUOaa_cv0wFkpSylr9awelgNrJh7V-xX0Mq_Wnm_yVBdmnRV3MLVz5taDloIJY4pYvlMjwBcQXA7_C6xeDEjWOHRQJ0t36whjVPjeKoRtnWJ_929G5q7AyYGcnompHgCgavkTeuahuFLeTPmsgAUHQg6ciCfm9zlaHGqjeDqHQ5l7okzyloySC_qtYEQByhmX43Bm0uP3l8pBy447LCIHr"
+                      />
+                      <div
+                        class="absolute bottom-0 right-0 w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center border-4 border-white dark:border-slate-800"
+                      >
+                        <span
+                          class="material-symbols-outlined text-white text-lg"
+                          >verified</span
+                        >
+                      </div>
+                    </div>
+                    <h3
+                      class="text-xl font-bold text-gray-900 dark:text-white mb-2"
+                    >
+                      مریم محمدی
+                    </h3>
+                    <p class="text-primary font-semibold mb-3">مدیر فنی</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                      معمار ارشد نرم‌افزار و متخصص در سیستم‌های توزیع‌شده و
+                      کلان‌داده
+                    </p>
+                  </div>
+
+                  <div
+                    class="bg-white dark:bg-slate-800 rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-scale delay-500"
+                  >
+                    <div class="relative inline-block mb-6">
+                      <img
+                        class="w-32 h-32 rounded-full object-cover ring-4 ring-primary/20"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5nO3Bwz0vAYCJmDwAQi3RdvLu-Fy9R4vBPRwH71pMs-DC6nt-DzIgldavacXoEL8zufI4F7j4aweEfq3DsxAkjsF-Vkoi0Bk5QYZjzf_Oo-bqRvZTLQmaWSEM8Otkjn9lmn2PqrgB8j0k593SiDO58NnjyVJy_V4agpO71zq0GGhDcpXKI0297k0iHvdIOsydiYU9_aGuybmdb5FUIdfodWOjoq0RE0vAyJ9v12T2bHOug8093HcTnm8z640czUQTivj7D5_DjaHZ"
+                      />
+                      <div
+                        class="absolute bottom-0 right-0 w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center border-4 border-white dark:border-slate-800"
+                      >
+                        <span
+                          class="material-symbols-outlined text-white text-lg"
+                          >verified</span
+                        >
+                      </div>
+                    </div>
+                    <h3
+                      class="text-xl font-bold text-gray-900 dark:text-white mb-2"
+                    >
+                      علی کریمی
+                    </h3>
+                    <p class="text-primary font-semibold mb-3">مدیر محصول</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                      استراتژیست محصول با تمرکز بر تجربه کاربری و نیازهای بازار
+                    </p>
+                  </div>
                 </div>
               </div>
+
               <!-- CTA Section -->
-              <div class="mt-16 mb-8 p-4">
+              <div class="animate-scale delay-600">
                 <div
-                  class="rounded-lg bg-primary/10 dark:bg-primary/20 p-8 text-center"
+                  class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-secondary p-12 text-center shadow-2xl"
                 >
-                  <h2 class="text-2xl font-bold text-black dark:text-white">
-                    به آینده متصل شوید
-                  </h2>
-                  <p class="mt-2 mb-6 text-gray-600 dark:text-gray-300">
-                    آماده‌اید تا پتانسیل کامل دارایی‌های خود را با قدرت دوقلوهای
-                    دیجیتال آزاد کنید؟
-                  </p>
-                  <div class="flex-wrap gap-3 flex justify-center">
-                    <button
-                      class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em]"
-                    >
-                      <span class="truncate">شروع به کار</span>
-                    </button>
-                    <button
-                      class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-gray-200 dark:bg-[#232f48] text-black dark:text-white text-base font-bold leading-normal tracking-[0.015em]"
-                    >
-                      <span class="truncate">درخواست دمو</span>
-                    </button>
+                  <div class="absolute inset-0 opacity-10">
+                    <div
+                      class="absolute top-10 right-10 w-32 h-32 bg-white rounded-full blur-3xl"
+                    ></div>
+                    <div
+                      class="absolute bottom-10 left-10 w-40 h-40 bg-white rounded-full blur-3xl"
+                    ></div>
+                  </div>
+                  <div class="relative z-10">
+                    <h2 class="text-3xl md:text-4xl font-black text-white mb-4">
+                      به آینده متصل شوید
+                    </h2>
+                    <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+                      آماده‌اید تا پتانسیل کامل دارایی‌های خود را با قدرت
+                      دوقلوهای دیجیتال آزاد کنید؟
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center">
+                      <button
+                        class="px-8 py-4 bg-white text-primary font-bold rounded-xl hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl"
+                      >
+                        شروع به کار
+                      </button>
+                      <button
+                        class="px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-bold rounded-xl hover:bg-white/30 hover:scale-105 transition-all duration-300 border-2 border-white/50"
+                      >
+                        درخواست دمو
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </main>
+
             <!-- Footer -->
             <footer
-              class="mt-auto border-t border-gray-200 dark:border-b-[#232f48] px-10 py-6"
+              class="mt-12 border-t border-gray-200 dark:border-slate-700 py-8 px-4"
             >
-              <div
-                class="flex flex-col md:flex-row justify-between items-center gap-6"
-              >
-                <div class="flex items-center gap-4 text-black dark:text-white">
-                  <div class="size-4 text-primary">
-                    <svg
-                      fill="none"
-                      viewbox="0 0 48 48"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        clip-rule="evenodd"
-                        d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z"
-                        fill="currentColor"
-                        fill-rule="evenodd"
-                      ></path>
-                    </svg>
-                  </div>
-                  <h2 class="text-base font-bold">سامانه دوقلوی دیجیتال</h2>
-                </div>
-                <nav
-                  class="flex gap-6 text-sm text-gray-500 dark:text-gray-400"
+              <div class="max-w-6xl mx-auto">
+                <div
+                  class="flex flex-col md:flex-row justify-between items-center gap-6"
                 >
-                  <a class="hover:text-primary" href="#">صفحه اصلی</a>
-                  <a class="hover:text-primary" href="#">درباره ما</a>
-                  <a class="hover:text-primary" href="#">تماس با ما</a>
-                  <a class="hover:text-primary" href="#">حریم خصوصی</a>
-                </nav>
-                <div class="text-gray-400 dark:text-gray-500 text-sm">
-                  © ۱۴۰۳ - تمامی حقوق محفوظ است.
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center"
+                    >
+                      <svg
+                        class="w-8 h-8 text-white"
+                        fill="currentColor"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <h2 class="text-lg font-bold text-gray-900 dark:text-white">
+                      سامانه دوقلوی دیجیتال
+                    </h2>
+                  </div>
+                  <nav
+                    class="flex flex-wrap gap-6 text-sm text-gray-600 dark:text-gray-400 justify-center"
+                  >
+                    <a class="hover:text-primary transition-colors" href="#"
+                      >صفحه اصلی</a
+                    >
+                    <a class="hover:text-primary transition-colors" href="#"
+                      >درباره ما</a
+                    >
+                    <a class="hover:text-primary transition-colors" href="#"
+                      >تماس با ما</a
+                    >
+                    <a class="hover:text-primary transition-colors" href="#"
+                      >حریم خصوصی</a
+                    >
+                  </nav>
+                  <div class="text-sm text-gray-500 dark:text-gray-500">
+                    © ۱۴۰۳ - تمامی حقوق محفوظ است
+                  </div>
                 </div>
               </div>
             </footer>
@@ -471,5 +750,10 @@
         </div>
       </div>
     </div>
+
+    <script src="./src/js/app.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/i18next@23.7.6/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.2.0/i18nextBrowserLanguageDetector.min.js"></script>
   </body>
 </html>

@@ -4,11 +4,12 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>تماس با ما - سامانه دوقلوی دیجیتال</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.tailwindcss.com?plugins=container-queries"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
@@ -50,8 +51,8 @@
     ></div>
 
     <nav
+    dir="ltr"
       data-aos="fade-down"
-      dir="ltr"
       class="w-full bg-[#005ebc] backdrop-blur-sm text-white fixed top-0 left-0 z-50 transition-all duration-300"
     >
       <!-- منوی موبایل با انیمیشن -->
@@ -62,7 +63,7 @@
         <ul class="flex justify-start items-center flex-col gap-6 pt-10 px-6">
           <li class="w-full">
             <a
-              href=""
+              href="./index.html"
               class="block text-lg font-semibold dark:hover:text-yellow-400 hover:text-blue-700 hover:translate-x-2 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
             >
               🏠 خانه
@@ -135,7 +136,7 @@
           <ul class="flex justify-center items-center flex-row-reverse gap-6">
             <li>
               <a
-                href=""
+                href="./index.html"
                 class="hover:text-yellow-300 transition-colors duration-300 font-medium"
               >
                 خانه
@@ -151,7 +152,7 @@
             </li>
             <li>
               <a
-                href=""
+                href="./contact.html"
                 class="hover:text-yellow-300 transition-colors duration-300 font-medium"
               >
                 تماس با ما
@@ -159,7 +160,7 @@
             </li>
             <li>
               <a
-                href=""
+                href="./about.html"
                 class="hover:text-yellow-300 transition-colors duration-300 font-medium"
               >
                 درباره ی ما
@@ -226,7 +227,7 @@
 
     <!-- Main Content -->
     <main
-      class="flex items-center m-auto text-black dark:text-white justify-center"
+      class="flex items-center m-auto text-black dark:text-white px-2 justify-center"
     >
       <div class="max-w-7xl mx-auto">
         <!-- Header -->
@@ -243,7 +244,7 @@
         <!-- Content Grid -->
         <div class="grid lg:grid-cols-3 gap-8">
           <!-- Contact Form -->
-          <div class="lg:col-span-2 glass rounded-3xl p-8  shadow-2xl">
+          <div class="lg:col-span-2 glass rounded-3xl p-8 shadow-2xl">
             <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
               <span class="material-symbols-outlined text-3xl">send</span>
               ارسال پیام
@@ -257,7 +258,7 @@
                   <input
                     type="text"
                     placeholder="احمد محمدی"
-                    class="w-full px-4 py-3 rounded-xl glass placeholder-black/75 focus:outline-none focus:ring-2 focus:ring-yellow-300 transition-all"
+                    class="w-full px-4 py-3 rounded-xl glass placeholder-black/75 dark:placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-300 transition-all"
                   />
                 </div>
                 <div>
@@ -265,7 +266,7 @@
                   <input
                     type="email"
                     placeholder="example@email.com"
-                    class="w-full px-4 py-3 rounded-xl glass placeholder-black/75  focus:outline-none focus:ring-2 focus:ring-yellow-300 transition-all"
+                    class="w-full px-4 py-3 rounded-xl glass placeholder-black/75 dark:placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-300 transition-all"
                   />
                 </div>
               </div>
@@ -275,7 +276,7 @@
                 <input
                   type="text"
                   placeholder="موضوع پیام شما"
-                  class="w-full px-4 py-3 rounded-xl glass placeholder-black/75  focus:outline-none focus:ring-2 focus:ring-yellow-300 transition-all"
+                  class="w-full px-4 py-3 rounded-xl glass placeholder-black/75 dark:placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-300 transition-all"
                 />
               </div>
 
@@ -284,7 +285,7 @@
                 <textarea
                   rows="6"
                   placeholder="پیام خود را اینجا بنویسید..."
-                  class="w-full px-4 py-3 rounded-xl glass placeholder-black/75  focus:outline-none focus:ring-2 focus:ring-yellow-300 transition-all resize-none"
+                  class="w-full px-4 py-3 rounded-xl glass placeholder-black/75 dark:placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-300 transition-all resize-none"
                 ></textarea>
               </div>
 
@@ -368,35 +369,8 @@
     </main>
 
     <!-- Footer -->
-    <footer
-      class="bg-slate-500 border-t w-full absolute bottom-0 border-white/10 py-8"
-    >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div
-          class="flex flex-col md:flex-row justify-between items-center gap-4 text-white/80"
-        >
-          <p class="text-sm">
-            © 1403 سامانه دوقلوی دیجیتال. تمامی حقوق محفوظ است.
-          </p>
-          <div class="flex gap-6 text-sm">
-            <a href="#" class="hover:text-yellow-300 transition-colors"
-              >حریم خصوصی</a
-            >
-            <a href="#" class="hover:text-yellow-300 transition-colors"
-              >شرایط استفاده</a
-            >
-          </div>
-        </div>
-      </div>
-    </footer>
 
     <script src="./src/js/home.js"></script>
     <script src="./src/js/app.js"></script>
-    <script>
-      AOS.init({
-        duration: 1000,
-        once: true,
-      });
-    </script>
   </body>
 </html>
